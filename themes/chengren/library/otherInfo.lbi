@@ -1,0 +1,21 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+       <label>{$lang.use_bonus}:<font color="#FF0000"></font></label>
+       {$lang.select_bonus}
+            <select name="bonus" onchange="changeBonus_1(this.value)" id="ECS_BONUS" style="border:1px solid #ccc;">
+              <option value="0" {if $order.bonus_id eq 0}selected{/if}>{$lang.please_select}</option>
+              <!-- {foreach from=$bonus_list item=bonus} -->
+              <option value="{$bonus.bonus_id}" {if $order.bonus_id eq $bonus.bonus_id}selected{/if}>{$bonus.type_name}[{$bonus.bonus_money_formated}]</option>
+              <!-- {/foreach} -->
+            </select>
+                {$lang.input_bonus_no}
+                <input name="bonus_sn" type="text" class="inputtext inputtext1" size="15" value="{$order.bonus_sn}"/>
+                <input name="validate_bonus" type="button" class="bnt_blue_1" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['ECS_FORMQUICKBUY'].elements['bonus_sn'].value)" style="vertical-align:middle;" /></label>
+    </li>
+    <!-- {if $allow_use_integral} 是否使用积分 -->
+    <li>
+       <label>{$lang.use_integral}:<font color="#FF0000"></font></label>
+        <input name="integral" type="text" class="inputtext inputtext1" id="ECS_INTEGRAL" onblur="changeIntegral_1(this.value)" value="{$order.integral|default:0}" size="10" />
+              {$lang.can_use_integral}:{$your_integral|default:0} {$points_name}，{$lang.noworder_can_integral}{$order_max_integral}  {$points_name}. <span id="ECS_INTEGRAL_NOTICE" class="notice"></span>
+
+    <!-- {/if} 是否使用积分 -->
+    

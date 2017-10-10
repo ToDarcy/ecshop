@@ -1,0 +1,61 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $cat_goods} -->
+<div class="chosen-box clf">
+<div class="chosen-menu fl">
+<h2 class="chosen-title chosen-title-{$goods_cat.sort_order}F">
+<i class="chosen-title-floor">{$goods_cat.sort_order}</i>
+<span>{$goods_cat.name|escape:html}</span></h2>
+<ul class="chosen-aside">
+ <!-- {foreach  from=get_cat_id_goods_best_list($this->_var['goods_cat']['id'],8) item=goods  name=goods}-->
+<li class="chosen-aside-item clf {if $smarty.foreach.goods.iteration eq 1}first{/if} {if $smarty.foreach.goods.first}current{/if}">
+<span class="serial-number">{$smarty.foreach.goods.iteration}</span>
+<a class="chosen-aside-img hide" rel="nofollow" target="_blank" href="{$goods.url}">
+<img class="lazy" data-original="{$goods.thumb}" src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="display: inline;"></a>
+<a class="chosen-aside-name" target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a>
+<p class="chosen-aside-price hide">{$goods.shop_price}</p>
+</li>
+<!--{/foreach}-->          
+</ul>
+</div>
+<div class="chosen-list-box fl">
+<div class="chosen-list-cate relative">
+<ul>
+<!--{foreach from=$categories item=cat name=no}-->
+<!--{ if $cat.name== $goods_cat.name}-->
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}" target="_blank">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         <!--{/if}-->
+        <!--{/foreach}-->
+</ul>
+<a href="{$goods_cat.url}" target="_blank" class="chosen-list-more">所有<i class="chosen-list-arrow"></i></a></div>
+<div class="chosen-list">
+<!--{foreach from=get_left_ad_cat_id($GLOBALS['smarty']->_var['goods_cat']['id']) item=ad name=index_image}-->
+<div class="left-ad fl">
+<a href="{$ad.url}">
+<img alt="{$ad.name}" src="{$ad.image}" target="_blank">
+</a>
+</div>
+<!--{/foreach}-->
+<ul class="list-item relative fr clf">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+<li class="chosen-item goods-{$smarty.foreach.goods.iteration}">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}"></a>
+<h4>{$goods.name|escape:html}</h4>
+<div>
+<span class="shop_price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></span>
+<del>{$goods.market_price}</del>
+</div>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->

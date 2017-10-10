@@ -1,0 +1,26 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<ul class="remd-cot-list">
+     <!--{foreach from=$new_goods item=goods}-->
+    <li class="remd-cot-item">
+    <div class="remd-cot-pic">
+      <a href="{$goods.url}"><img title="{$goods.name|escape:html}" src="{$goods.thumb}" datab-src="{$goods.thumb}"></a>
+    </div>
+    <div class="remd-time"></div>
+    <div class="span-pdt-scp">
+      <div class="span-pdt-name"><a target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a></div>
+      <div class="span-pdt-pric">
+        <span>
+        <!-- {if $goods.promote_price neq ""} -->
+          {$goods.promote_price}
+          <!-- {else}-->
+          {$goods.shop_price}
+          <!--{/if}-->
+          </span>
+        <a target="_blank" class="span-pdt-btn1" href="{$goods.url}">立即购买</a>
+      </div>
+    </div>
+  </li>
+ <!--{/foreach}-->
+  </ul>
+<!-- {/if} -->

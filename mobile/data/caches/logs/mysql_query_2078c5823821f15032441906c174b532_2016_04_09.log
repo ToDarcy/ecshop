@@ -1,0 +1,18 @@
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `weishangcheng`.`ecs_sessions` WHERE sesskey = '2dd4651d0767ce9cccb837405948899d'
+
+SELECT code, value FROM `weishangcheng`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `weishangcheng`.`ecs_sessions` WHERE expiry < 1460137264
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `weishangcheng`.`ecs_sessions` WHERE sesskey = '2dd4651d0767ce9cccb837405948899d'
+
+SELECT code, value FROM `weishangcheng`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `weishangcheng`.`ecs_sessions` WHERE expiry < 1460137264
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `weishangcheng`.`ecs_sessions` WHERE sesskey = '2dd4651d0767ce9cccb837405948899d'
+
+SELECT code, value FROM `weishangcheng`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `weishangcheng`.`ecs_sessions` WHERE expiry < 1460137264
+

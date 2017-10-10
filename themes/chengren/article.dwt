@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="help.css" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='jquery.js,jquery_json.js,transport_jquery.js'}
+{insert_scripts files='common.js,'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="blank"></div>
+<div class="w-main clearfix">
+	<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+<!-- {if $article.cat_id eq 3}-->
+<div class="clearfix">
+<div class="right-con">
+<div class="right-inner">
+<div class="article-tit">{$article.title|escape:html}<p>{$article.author|escape:html} / {$article.add_time}</p></div>
+<div class="article-detail">
+<!-- {if $article.content } --> 
+{$article.content} 
+<!-- {/if} --> 
+{if $article.open_type eq 2 or $article.open_type eq 1}<br />
+<div><a href="{$article.file_url}" target="_blank">{$lang.relative_file}</a></div>
+{/if}
+</div>
+<div class="article-bottom clearfix">
+<div class="fl">
+{if $next_article}
+{$lang.next_article}:<a href="{$next_article.url}">{$next_article.title}</a><br />{/if} 
+{if $prev_article}
+{$lang.prev_article}:<a href="{$prev_article.url}">{$prev_article.title}</a> {/if}
+ </div>
+<div class="fr">
+</div>
+</div>
+</div>
+</div>
+<div class="left-con">
+<!-- #BeginLibraryItem "/library/article_category_tree.lbi" --><!-- #EndLibraryItem -->
+</div>
+</div>
+<!-- {else} -->
+ <!-- 左栏 -->
+<div class="content">
+<div class="bread">
+ <div class="detail-title">{$article.title|escape:html}</div>
+<div class="detail-time">{$article.add_time} (来源: {$article.author|escape:html})</div>
+</div>
+<div class="detail">
+<!-- {if $article.content } -->
+{$article.content}
+<!-- {if $page_nav} 翻页-->
+<div class="listpage" style="background:none; padding-top:0; padding-bottom: 10px;">{$page_nav}</div>
+<!-- {/if} -->
+<!-- {/if} --> 
+</div>
+</div>
+<!-- 右边栏 -->
+<div class="sidebar">
+<div class="qrcode">
+{foreach from=get_advlist_by_id(8) item=ad name=index_image}
+<a href="{$ad.url}" alt="{$ad.name}" target="_blank"><img src="{$ad.image}">
+</a>
+{/foreach}
+</div>
+<div class="hot">
+<div class="hot-title hot-title-up">
+<div class="hot-title-text">相关推荐</div>
+</div>
+<div class="hot-list">
+<!--{foreach from=$art_rel_list item=art_rel}-->
+<div class="item">
+<a  href="{$art_rel.url}" target="_blank">
+<div class="item-pic">
+<!-- {if $art_rel.file_url neq ""}-->
+<img src="{$art_rel.file_url}">
+<!-- {else}-->
+<img src="images/no_img.gif">
+<!-- {/if} --> 
+</div>
+</a>
+<div class="item-info">
+<div class="item-title">
+<a  href="{$art_rel.url}" target="_blank">
+{$art_rel.title}</a>
+</div>
+<div class="item-desc">{$art_rel.description}</div>
+</div>
+<div class="item-status">
+<div class="item-view">
+<div class="item-status-text">{$art_rel.click_count}</div>
+</div>
+</div>
+</div>
+<!--{/foreach}-->
+</div>
+</div>
+<!-- {if $related_goods} -->
+<div class="hot">
+<div class="hot-title hot-title-up">
+<div class="hot-title-text">相关商品</div>
+</div>
+<div class="hot-list">
+<!--{foreach from=$related_goods item=releated_goods_data}-->
+<div class="item">
+<a href="{$releated_goods_data.url}" target="_blank">
+<div class="item-pic">
+<img src="{$releated_goods_data.goods_thumb}">
+</div>
+</a>
+<div class="item-info">
+<div class="item-title">
+<a href="{$releated_goods_data.url}" target="_blank">
+{$releated_goods_data.goods_name}</a>
+</div>
+<div class="item-desc">{$releated_goods_data.goods_brief}</div>
+</div>
+<div class="item-status">
+<div class="item-views">
+<div class="item-status-text article_price">
+<!-- {if $releated_goods_data.promote_price neq 0} -->{$releated_goods_data.formated_promote_price}        
+<!-- {else} -->
+{$releated_goods_data.shop_price}
+<!-- {/if} -->
+</div>
+</div>
+<div class="item-up">
+<div class="item-status-text article-cart">
+<a href="{$releated_goods_data.url}" target="_blank">立即购买</a>
+</div>
+</div>
+</div>
+</div>
+<!--{/foreach}-->
+</div>
+</div>
+<!-- {/if} -->  
+</div>
+<!-- {/if} -->  
+</div>
+<div class="site-footer">
+  <div class="footer-related"> 
+	<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+  </div>
+</div>
+
+</body>
+</html>

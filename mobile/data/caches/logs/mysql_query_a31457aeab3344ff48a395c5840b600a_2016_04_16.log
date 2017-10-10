@@ -1,0 +1,476 @@
+INSERT INTO `wsc20`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('8ee3ff688fdb78e0813f7767fd5f4312', '1460781656', '192.168.1.18', 'a:0:{}')
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781656', ip = '192.168.1.18', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779856
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `wsc20`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `wsc20`.`ecs_admin_user` WHERE user_name = 'admin' AND password = 'c628bc777e64fb252b7806b90242c24e'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `wsc20`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `wsc20`.`ecs_admin_user` WHERE user_name = 'admin' AND password = 'ff6234ec04b6b353592d53e07af30490'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `wsc20`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `wsc20`.`ecs_admin_user` WHERE user_name = 'admin' AND password = 'c628bc777e64fb252b7806b90242c24e'
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781667', ip = '192.168.1.18', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `wsc20`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `wsc20`.`ecs_admin_user` WHERE user_name = 'admin' AND password = 'f5665a35948d42fd1df7d6caba55eec3'
+
+UPDATE `wsc20`.`ecs_admin_user` SET last_login='1460752874', last_ip='192.168.1.18' WHERE user_id='1'
+
+SELECT DISTINCT session_id FROM `wsc20`.`ecs_cart` AS c, `wsc20`.`ecs_sessions` AS s WHERE c.session_id = s.sesskey 
+
+DELETE FROM `wsc20`.`ecs_cart` WHERE session_id NOT  IN ('') 
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781674', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:1:\"0\";s:12:\"suppliers_id\";s:1:\"0\";s:10:\"shop_guide\";b:1;}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779874
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779874
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781674', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:1:\"0\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779874
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT region_id, region_name FROM `wsc20`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `wsc20`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `wsc20`.`ecs_region` WHERE region_type = '2' AND parent_id = '2'
+
+SELECT value from `wsc20`.`ecs_shop_config` WHERE code='shop_name'
+
+SELECT value from `wsc20`.`ecs_shop_config` WHERE code='shop_title'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `wsc20`.`ecs_admin_message` AS a, `wsc20`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `wsc20`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `wsc20`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `wsc20`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('') ) 
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `wsc20`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1460752878' AND promote_end_date >= '1460752878' AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1460752878' AND promote_end_date >= '1460752878' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_stats` WHERE access_time > 1460707200
+
+SELECT count(*) FROM `wsc20`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `wsc20`.`ecs_feedback` AS f LEFT JOIN `wsc20`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460779878
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779878
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460779880
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779880
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `wsc20`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_users`
+
+SELECT value FROM `wsc20`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `wsc20`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781681', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460752881;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781684', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:1:\"0\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460779884
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460781859', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460753059;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460753059'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460753059
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460782039', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460753239;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460753239'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460753239
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460782219', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460753419;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460780419
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460753419'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460753419
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460782400', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460753600;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460780600
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460753600'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460753600
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460782580', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460753780;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460780780
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460753780'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460753780
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460782760', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460753960;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460780960
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460780960
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460753960'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460753960
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460782940', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460754140;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460781140
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460754140'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460754140
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460783120', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460754320;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460781320
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460754320'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460754320
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460783300', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460754500;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460781500
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460781500
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460754500'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460754500
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460783480', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460754680;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460781680
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460781680
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460754680'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460754680
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460783660', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460754860;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460781860
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460781860
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460754860'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460754860
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460783840', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460755040;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8ee3ff688fdb78e0813f7767fd5f4312' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460782040
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460782040
+
+INSERT INTO `wsc20`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('3b284d2502a75917f88f8932b129065b', '1460803776', '192.168.1.18', 'a:0:{}')
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460803776', ip = '192.168.1.18', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '3b284d2502a75917f88f8932b129065b' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460801976
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `wsc20`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `wsc20`.`ecs_admin_user` WHERE user_name = 'admin' AND password = 'f5665a35948d42fd1df7d6caba55eec3'
+
+UPDATE `wsc20`.`ecs_admin_user` SET last_login='1460774983', last_ip='192.168.1.18' WHERE user_id='1'
+
+SELECT DISTINCT session_id FROM `wsc20`.`ecs_cart` AS c, `wsc20`.`ecs_sessions` AS s WHERE c.session_id = s.sesskey 
+
+DELETE FROM `wsc20`.`ecs_cart` WHERE session_id NOT  IN ('') 
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460803783', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1460752874\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '3b284d2502a75917f88f8932b129065b' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460801983
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `wsc20`.`ecs_admin_message` AS a, `wsc20`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `wsc20`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `wsc20`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `wsc20`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('') ) 
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `wsc20`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1460774983' AND promote_end_date >= '1460774983' AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1460774983' AND promote_end_date >= '1460774983' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_stats` WHERE access_time > 1460707200
+
+SELECT count(*) FROM `wsc20`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `wsc20`.`ecs_feedback` AS f LEFT JOIN `wsc20`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460801983
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460801984
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `wsc20`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_users`
+
+SELECT value FROM `wsc20`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `wsc20`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE add_time >= '1460752874'
+
+SELECT COUNT(*) FROM `wsc20`.`ecs_order_info` WHERE pay_time >= 1460752874
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460803786', ip = '192.168.1.18', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1460774986;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '3b284d2502a75917f88f8932b129065b' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460801986
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `wsc20`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `wsc20`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `wsc20`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `wsc20`.`ecs_region` WHERE region_type = '2' AND parent_id = '2'
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460801990
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `wsc20`.`ecs_template` WHERE 1  AND theme <> 'default' 
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460801992
+
+DELETE FROM `wsc20`.`ecs_sessions` WHERE expiry < 1460801992
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `wsc20`.`ecs_sessions` WHERE sesskey = '3b284d2502a75917f88f8932b129065b'
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+SHOW TABLES LIKE 'ecs\_%'
+

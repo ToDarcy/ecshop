@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="wrap homepage-submenu relative">
+  <div class="submenu">
+<!--{foreach from=$categories item=cat name=categories}-->
+	    <!-- {if $smarty.foreach.categories.iteration<8}-->
+        <div class="submenu-item">
+        <p class="submenu-title i-global i-menu-{$smarty.foreach.categories.iteration}">
+         {$cat.name|escape:html}<i class="i-global submenu-arrow"></i>
+         <i class="submenu-shelter hide" style="display: none;"></i>
+        </p>
+        <ul class="submenu-hot clf">
+       <!--{foreach from=$cat.cat_id item=child}-->
+          <li><a target="_blank" title="{$child.name|escape:html}" href="{$child.url}" rel="nofollow">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         </ul>
+        <dl class="submenu-detail hide" style="display: none;">
+         <dt class="submenu-detail-title">{$cat.name|escape:html}</dt>
+          <dd class="menu-column">
+            <ul class="submenu-list clf">
+            <!--{foreach from=$cat.cat_id item=child}-->
+              <li><a target="_blank" title="{$child.name|escape:html}" href="{$child.url}" rel="nofollow">{$child.name|escape:html}</a></li>
+               <!--{/foreach}-->
+              </ul>
+          </dd>
+          <dt class="submenu-detail-title">知名品牌</dt>
+          <dd class="menu-column">
+            <ul class="submenu-list clf">
+            <!--{foreach from=$cat.brands item=brand name=brands}-->
+              <!-- {if $smarty.foreach.brands.iteration<10}-->
+              <li><a target="_blank" title="{$brand.brand_name|escape:html}" href="{$brand.url}" rel="nofollow">{$brand.brand_name|escape:html}</a></li>
+             <!-- {/if} -->
+                <!-- {/foreach} -->
+              </ul>
+          </dd>
+          
+        </dl>
+      </div>
+      <!-- {/if} -->
+      <!-- {/foreach} -->
+      </div>
+
+  </div>

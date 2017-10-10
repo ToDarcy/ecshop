@@ -1,0 +1,18 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.art_rel_tit{clear:both;width:98%;font-size:17px;font-weight:bold;padding:8px 0; margin-top:15px; text-align:left; border-bottom:1px solid #ccc;}
+.art_rel_box{width:98%;padding:8px 0;}
+.art_rel_box ul{width:100%;}
+.art_rel_box ul li{float:left;width:300px;height:25px;}
+.art_rel_box ul li a{text-decoration:none;color:#000;}
+.art_rel_box ul li a:hover{text-decoration:underline;color:#ff3300;}
+</style>
+<div class="art_rel_tit">相关文章</div>
+<div class="art_rel_box">
+<ul>
+{foreach from=$art_rel_list item=art_rel}
+<li>? <a href="{$art_rel.url}" target="_blank">{$art_rel.title}</a></li>
+{/foreach}
+</ul>
+</div>
+<div style="clear:both;"><br></div>

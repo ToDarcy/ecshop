@@ -1,0 +1,358 @@
+#wrapper .box {
+	background:#fff;
+	padding-bottom:2px;
+	overflow:hidden
+}
+#wrapper .box_1 {
+	border:1px solid #eee;
+	background-color:#fff
+}
+#wrapper h3 {
+	height:40px;
+	line-height:40px;
+	font-size:12px;
+	padding:0 12px;
+	font-weight:100
+}
+#wrapper h3 span {
+	float:left;
+	width:auto;
+	height:40px;
+	line-height:40px;
+	font-size:18px;
+	text-align:left;
+	font-weight:bold;
+	color:#333;
+	padding-left:0
+}
+#wrapper .boxCenterList {
+	padding:8px
+}
+#wrapper .boxCenterList ul {
+	height:1%;
+	margin-bottom:5px
+}
+#wrapper .boxCenterList li {
+	float:left;
+	width:350px
+}
+#wrapper .group li {
+	float:left;
+	background:#fff;
+	padding:8px
+}
+#wrapper .boxCenterList li a {
+	color:#3f3f3f;
+	text-decoration:none
+}
+#wrapper .f5 {
+	font-size:14px;
+	font-weight:bold
+}
+#wrapper th,td {
+	margin:auto;
+	padding:auto
+}
+#wrapper table td {
+	padding:5px;
+	border:1px solid #eee;
+	padding:5px 10px
+}
+#wrapper table th {
+	padding:5px;
+	border:1px solid #eee;
+	padding:5px 10px
+}
+#wrapper .blank5 {
+	height:5px;
+	line-height:5px;
+	_margin:-3px 0;
+	clear:both;
+	visibility:hidden
+}
+#wrapper h5 {
+	height:40px;
+	line-height:40px;
+	background-color:#FFF;
+	font-size:18px;
+	color:#333;
+	padding:0 10px 0 0
+}
+h5 span {
+	float:left;
+	font-weight:bold;
+	font-size:18px;
+	padding-left:0
+}
+.bnt_blue_1,.bnt_blue,.bnt_blue_2 {
+	display:inline-block;
+	padding:4px 12px;
+	height:24px;
+	line-height:16px;
+	_line-height:18px;
+	border:1px solid #BD0004;
+	border-radius:3px;
+	font-size:100%;
+	color:#fff;
+	background-color:#ff666b;
+	overflow:hidden;
+	vertical-align:middle;
+	cursor:pointer
+}
+#brandList {
+	border-left:1px dashed #f2f2f2;
+	border-bottom:1px dashed #f2f2f2
+}
+#brandList .brandBox {
+	border-top:1px dashed #f2f2f2;
+	border-right:1px dashed #f2f2f2;
+	float:left;
+	width:294px;
+	height:140px
+}
+#brandList .brandBox .brandLogo {
+	width:100%;
+	height:120px;
+	line-height:120px;
+	font-size:24px;
+	text-align:center
+}
+#brandList .brandBox .brandLogo img {
+	width:240px;
+	height:120px
+}
+#brandList .brandBox p {
+	text-align:center
+}
+.sort {
+	margin-bottom:10px;
+	height:30px;
+	margin-top:10px;
+	border:1px solid #eee;
+	border-bottom:2px solid #ccc;
+	padding:5px 0;
+	background:#fff
+}
+.sort .bd {
+	float:left;
+	font-size:0;
+	padding-right:12px
+}
+.sort .bd a {
+	display:inline-block;
+	font-size:12px;
+	margin-right:-1px;
+	position:relative;
+	z-index:1
+}
+a.more-btn,.rmb,.search-selected a.item,.sort .bd a span {
+	background:url(images/search-page-bg.png) 0 -9999px no-repeat
+}
+.sort .bd a span {
+	display:block;
+	padding:5px 26px 5px 15px;
+	background-position:right -128px
+}
+.search_num {
+	width:400px;
+	float:right;
+	text-align:right;
+	line-height:30px;
+	padding:0 15px
+}
+.sort .curr .search_ASC {
+	border:1px solid #fff;
+	padding:4px 26px 4px 15px;
+	background-position:right -330px;
+	color:#ff666b;
+	text-shadow:1px 1px 1px #fff
+}
+.search_num b {
+	color:#ff666b
+}
+.search_num span.search_btn {
+	margin-left:10px;
+	font-size:13px
+}
+.iconfont {
+	font-family:"lizi";
+	font-size:100%;
+	font-style:normal;
+	font-weight:normal;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale
+}
+.search_num span.search_btn a {
+	display:inline-block;
+	width:26px;
+	height:26px;
+	line-height:28px;
+	text-align:center;
+	border:1px solid #e4e4e4;
+	background-color:#fff;
+	margin:0 5px;
+	color:#999
+}
+.search_num span.search_btn span {
+	color:#333
+}
+.search_num span.search_btn span em {
+	color:#ff666b
+}
+.search_num span.search_btn a {
+	display:inline-block;
+	width:26px;
+	height:26px;
+	line-height:28px;
+	text-align:center;
+	border:1px solid #e4e4e4;
+	background-color:#fff;
+	margin:0 5px;
+	color:#999
+}
+.sort .curr .search_DESC {
+	border:1px solid #fff;
+	padding:4px 26px 4px 15px;
+	background-position:right -104px;
+	color:#ff666b;
+	text-shadow:1px 1px 1px #fff
+}
+.productlist {
+	width:100%;
+	overflow:hidden
+}
+.productlist li {
+	width:230px;
+	height:362px;
+	position:relative;
+	float:left;
+	margin:0 7px 14px 0;
+	overflow:hidden;
+	display:inline;
+	border:1px solid #eee;
+	background-color:#fff;
+}
+a.productitem {
+	display:block;
+	cursor:pointer;
+	padding-bottom:8px;
+	position:relative;
+	overflow:hidden
+}
+a.productitem span.productimg {
+	display:block;
+	background:url(images/loading-16.gif) center center no-repeat;
+	margin-bottom:10px;
+	padding:0
+}
+a.productitem span.productimg img {
+	vertical-align:top;
+	display:block
+}
+.productlist li a.productitem span.productimg img {
+	width:230px;
+	height:230px
+}
+a.productitem span {
+	padding:0 10px
+}
+a.addcart {
+	display:none
+}
+a.productitem span.nalaprice {
+	color:#ff666b;
+	font-size:14px;
+	display:block
+}
+a.productitem span.xszk {
+	padding-left:55px;
+	background:url(images/xsdz-ico.png) 10px center no-repeat
+}
+a.productitem span.productname {
+	display:block;
+	height:35px;
+	line-height:16px;
+	overflow:hidden;
+	color:#666
+}
+a.productitem span.description {
+	display:block;
+	height:16px;
+	overflow:hidden;
+	color:#999
+}
+a.productitem span.price {
+	display:none
+}
+a.productitem span.salerow {
+	display:block;
+	color:#999
+}
+a.productitem span.sales {
+	color:#ff666b;
+	padding:0 2px
+}
+.article_search {
+	margin:8px 0
+}
+.productlist li .action {
+	margin:5px 10px;
+}
+.productlist li .p-num {
+	float:left;
+	width:55px;
+	height:25px;
+	overflow:hidden;
+	zoom:1;
+}
+.productlist li .p-num input {
+	width:21px;
+	height:18px;
+	line-height:18px;
+	text-align:center;
+	border:1px solid #dadada;
+	padding:2px;
+	font-size:12px;
+	overflow:hidden;
+	color:#6b6b6b;
+}
+.productlist li .p-num span {
+	float:left;
+	margin-right:2px;
+}
+.productlist li .p-num a {
+	width:13px;
+	height:9px;
+	border:1px solid #dadada;
+	display:block;
+	line-height:9px;
+	text-align:center;
+	text-decoration:none;
+	cursor:pointer;
+	color:#6b6b6b;
+}
+.productlist li .p-num .p-reduce {
+	margin-top:2px;
+}
+.productlist li .p-btn,.productlist li .p-btn1,.productlist li .p-btn2 {
+	float:left;
+	margin-right:10px;
+	_display:inline;
+}
+.productlist li .p-num .disable {
+	color:#dadada;
+	cursor:default;
+}
+.productlist li .p-btn a {
+	border:1px solid #dadada;
+	border-radius:2px;
+	cursor:pointer;
+	display:block;
+	font-size:12px;
+	height:22px;
+	line-height:22px;
+	text-decoration:none;
+	width:70px;
+	color:#557e00;
+	text-align:center;
+}

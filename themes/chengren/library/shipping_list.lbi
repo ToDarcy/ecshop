@@ -1,0 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<em>配送方式：</em>
+
+ <select name="shipping" id="shipping" onchange="quick_to_cart({$goods.goods_id});">
+ <option value="">请选择配送方式</option>
+<!-- {foreach from=$shipping_list item=shipping} 循环配送方式 -->
+        <option value="{$shipping.shipping_id}" selected='selected' supportCod="{$shipping.support_cod}" insure="{$shipping.insure}" onClick="quick_to_cart({$goods.goods_id});">{$shipping.shipping_name}</option>
+<!-- {/foreach}循环配送方式 -->
+      </select>

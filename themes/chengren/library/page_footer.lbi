@@ -1,0 +1,71 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  {insert_scripts files='common_min.js'}
+ {insert_scripts files='index_min.js'}
+<div id="footer">
+  <!--{if $helps}-->
+  <div class="footer">
+    <div class="wrap">
+      <div class="footer-wrap">
+        <!-- {foreach from=$helps item=help_cat name=helps} -->
+        <dl class="footer-column">
+          <dt class="footer-title">
+          <i class="i-global i-footer-{$smarty.foreach.helps.iteration}"></i>{$help_cat.cat_name}</dt>
+          <dd class="footer-content">
+        <!-- {foreach from=$help_cat.article item=item } -->
+         <p><a href="help.php?id={$item.article_id}" target="_blank" rel="nofollow">{$item.short_title}</a></p>
+         <!-- {/foreach} -->
+          </dd>
+        </dl>
+        <!-- {/foreach} -->
+       <dl class="footer-column footer-service">
+          <dt class="footer-title"><i class="i-global i-footer-rx"></i>客服热线</dt>
+          <dd class="footer-content">
+            <p class="footer-telephone">
+            <!-- 客服电话{if $service_phone} -->
+             {$service_phone}
+             <!-- 结束客服电话{/if} -->
+               </p>
+            <p>周一至周日 9:00-21:00</p>
+          </dd>
+        </dl>
+        <dl class="footer-column footer-qrcode">
+          <dt class="footer-title"><i class="i-global i-footer-xz"></i>商城APP</dt>
+          <dd class="footer-content">
+            <i class="qrcode qrcode-footer"></i>
+            <p>下载APP,购物更隐私</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>  
+   <!--{/if}-->
+  <div class="copyright">
+    <div class="wrap">
+      <div class="copyright-wrap clf">
+        <p class="copyright-content fr">
+          <a class="footer-police" href="http://www.miibeian.gov.cn/publish/query/indexFirst.action" target="_blank"><i class="i-global i-footer-police"></i></a>
+{$copyright}	 
+<!-- ICP 证书{if $icp_number} -->
+  <a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action" target="_blank">{$icp_number}</a>
+  <!-- 结束ICP 证书{/if} -->
+        </p>
+        <ul class="copyright-nav fl">
+          <li><a href="javascript:;" rel="nofollow" onclick="AddFavorite('{$shop_name}',location.href)">加入收藏</a></li>
+		  <!-- {if $navigator_list.bottom} -->
+         <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+       <li><a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a></li>
+      <!-- {/foreach} -->
+      <!-- {/if} -->
+      </ul>
+      </div>
+    </div>
+<div class="add_ok" id="cart_show">
+    <div class="tip">
+        <i class="iconfont"></i>商品已成功加入购物车
+    </div>
+    <div class="go">
+        <a href="javascript:easyDialog.close();" class="back">&lt;&lt;继续购物</a>
+        <a href="flow.php" class="btn">去结算</a>
+    </div>
+</div>
+{insert_scripts files='common_min.js'}

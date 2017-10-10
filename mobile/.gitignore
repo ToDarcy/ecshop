@@ -1,0 +1,19 @@
+.DS_Store
+
+data/config.php
+data/install.lock
+
+data/attached/*
+!data/attached/index.html
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project

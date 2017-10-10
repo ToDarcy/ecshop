@@ -1,0 +1,53 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+{insert_scripts files='Sales_time.js'}
+<style>
+.timediv{position:absolute;top:0;left:330px;display: none;}
+.time1{display: block;}
+</style>
+<div class="sale" id="sale">
+<div class="sale-top clf">
+<i class="i-sale i-clock"></i>
+<i class="i-sale i-sale-tips"></i>
+<span class="sale-status fl">距离本场结束：</span>
+<ul class="i-sale i-sale-time" id="Sales_Time"/></ul>
+<div class="sale-right fr">
+<a href="../search.php?intro=promotion" target="_blank" class="i-sale-all fl">查看所有<i class="i-sale-arrow"></i></a>
+</div>
+</div>
+<ul class="sale-list clf" id="sale-list">
+<!--{foreach from=$promotion_goods item=goods}-->
+<li class="sale-item">
+<div class="sale-item-pic">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}">
+<span class="sale-item-discount">直降{$goods.zhekou}%</span></a>
+</div>
+<p class="sale-item-name">
+<a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape:html}</a></p>
+<div class="clf">
+<p class="sale-item-price">
+<i>{$goods.market_price}</i>
+<span>{$goods.promote_price}</span>
+</p>
+ <!-- {if $goods.goods_number eq 0} -->
+   <a class="disable">已抢光</a>
+  <!-- {else} -->
+ <a target="_blank" href="{$goods.url}" class="sale-item-btn">去抢购</a>
+  <!-- {/if} --> 
+</div>
+</li>
+<script type="text/javascript">
+var now_time = {$now_time};
+var gmt_end_time = {$goods.gmt_end_time|default:0};
+var day = "";
+var hour = "";
+var minute = "";
+var second = "";
+var end = "";
+onload_Sales_Time();
+</script>
+<!--{/foreach}-->          
+</ul>
+</div>
+<!-- {/if} -->

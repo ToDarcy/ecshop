@@ -1,0 +1,8 @@
+INSERT INTO `wsc20`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('757bed8f4ca629f744c73a7950f8b2aa', '1460729927', '192.168.1.18', 'a:0:{}')
+
+SELECT code, value FROM `wsc20`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `wsc20`.`ecs_sessions` SET expiry = '1460729927', ip = '192.168.1.18', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '757bed8f4ca629f744c73a7950f8b2aa' LIMIT 1
+
+DELETE FROM `wsc20`.`ecs_sessions_data` WHERE expiry < 1460728127
+

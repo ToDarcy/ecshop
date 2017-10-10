@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{foreach from=$history_list item=goods}-->
+ <li>
+ <div class="p-img">
+ <a target="_blank" href="{$goods.url}">
+ <img src="{$goods.goods_thumb}" alt="{$goods.goods_name}">
+ </a>
+ </div>
+ <div class="p-name">
+ <a target="_blank" href="{$goods.url}">{$goods.goods_name}
+ </a> 
+ </div>
+ <div class="p-comm">
+ <span class="p-price main-color">
+  <!-- {if $goods.promote_price neq ""} --> 
+  {$goods.promote_price} 
+  <!-- {else}--> 
+  {$goods.shop_price} 
+   <!--{/if}--> 
+ </span> 
+ </div>
+</li>
+<!--{/foreach}--> 

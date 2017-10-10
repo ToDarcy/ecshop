@@ -1,0 +1,123 @@
+.temai_list {
+	margin-right:-30px
+}
+.temai_list li {
+	float:left;
+	width:282px;
+	overflow:hidden;
+	border:1px solid #ccc;
+	background-color:#fff;
+	margin:0 20px 20px 0;
+	box-shadow:0 0 3px rgba(200,200,200,0.5);
+	-webkit-transition:all .5s;
+	-moz-transition:all .5s;
+	-ms-transition:all .5s;
+	-o-transition:all .5s;
+	transition:all .5s
+}
+.temai_list li a {
+	display:block;
+	zoom:1;
+	cursor:pointer;
+	text-decoration:none;
+	position:relative;
+	overflow:hidden
+}
+.temai_list li .pic {
+	text-align:center;
+	padding-top:15px
+}
+.temai_list li .pic img {
+	width:240px;
+	height:240px;
+	vertical-align:top
+}
+.temai_list li h3 {
+	margin:13px 13px 5px;
+	height:44px;
+	line-height:22px;
+	overflow:hidden
+}
+.temai_list li p.price {
+	padding:5px 12px 17px 12px;
+	height:28px;
+	overflow:hidden;
+	font-size:18px;
+	position:relative
+}
+.temai_list li p.price span {
+	vertical-align:middle
+}
+.temai_list li p.price .bd {
+	font-size:16px;
+	color:#ed3714;
+}
+.temai_list li p.price .bd strong {
+	font-size:20px
+}
+.temai_list li p.price .sale {
+	height:21px;
+	line-height:21px;
+	padding-left:15px;
+	color:#999;
+	font-size:14px;
+	overflow:hidden;
+	text-decoration:line-through
+}
+.temai_list li p.price .sale b {
+	margin-right:3px;
+	font-weight:400
+}
+.temai_list li p.price .baoyou {
+	background-color:#fee9d6;
+	padding:0 10px;
+	height:21px;
+	line-height:21px;
+	color:#09c762;
+	font-size:14px;
+	border-radius:4px
+}
+.temai_list li p.price .num {
+	position:absolute;
+	top:12px;
+	right:12px;
+	font-size:12px;
+	color:#666
+}
+.temai_list li p.price .num strong {
+	font-weight:400
+}
+.temai_list li a:hover {
+	text-decoration:none
+}
+.temai_list li.hover {
+	border-color:#09c762;
+	box-shadow:0 0 20px rgba(0,0,0,0.3)
+}
+.temai_list li.hover h3 {
+	color:#09c762
+}
+.temai_list li.over {
+	border-color:#ccc;
+	box-shadow:0 0 3px rgba(200,200,200,0.5)
+}
+.temai_list li.over .sale {
+	background-position:0 -32px
+}
+.temai_list li.over .over_tip {
+	position:absolute;
+	top:70px;
+	left:50%;
+	margin-left:-60px;
+	display:block;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	padding:45px 0;
+	border-radius:60px;
+	background:rgba(0,0,0,0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#50000000',endColorstr='#50000000');
+	text-align:center;
+	font-size:24px;
+	color:#fff
+}

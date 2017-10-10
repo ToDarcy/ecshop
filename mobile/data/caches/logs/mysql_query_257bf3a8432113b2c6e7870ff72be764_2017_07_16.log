@@ -1,0 +1,140 @@
+INSERT INTO `chengren2017`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('34891f8ff1eeed47ab4716cd3d1a4d73', '1500181403', '192.168.1.16', 'a:0:{}')
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `chengren2017`.`ecs_sessions` SET expiry = '1500181403', ip = '192.168.1.16', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `chengren2017`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `chengren2017`.`ecs_admin_user` WHERE user_name = 'admin' AND password = '20336f54aa52f3967750c672d267e07e'
+
+UPDATE `chengren2017`.`ecs_admin_user` SET last_login='1500152608', last_ip='192.168.1.16' WHERE user_id='1'
+
+SELECT DISTINCT session_id FROM `chengren2017`.`ecs_cart` AS c, `chengren2017`.`ecs_sessions` AS s WHERE c.session_id = s.sesskey 
+
+DELETE FROM `chengren2017`.`ecs_cart` WHERE session_id NOT  IN ('') 
+
+UPDATE `chengren2017`.`ecs_sessions` SET expiry = '1500181408', ip = '192.168.1.16', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1493945923\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73' LIMIT 1
+
+DELETE FROM `chengren2017`.`ecs_sessions` WHERE expiry < 1500179608
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `chengren2017`.`ecs_sessions_data` WHERE expiry < 1500179608
+
+DELETE FROM `chengren2017`.`ecs_sessions` WHERE expiry < 1500179608
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `chengren2017`.`ecs_admin_message` AS a, `chengren2017`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `chengren2017`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `chengren2017`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `chengren2017`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `chengren2017`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500152608' AND promote_end_date >= '1500152608' AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500152608' AND promote_end_date >= '1500152608' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_stats` WHERE access_time > 1500105600
+
+SELECT count(*) FROM `chengren2017`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `chengren2017`.`ecs_feedback` AS f LEFT JOIN `chengren2017`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `chengren2017`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_users`
+
+SELECT value FROM `chengren2017`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `chengren2017`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `chengren2017`.`ecs_sessions_data` WHERE expiry < 1500179611
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `chengren2017`.`ecs_sessions` WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73'
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `chengren2017`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `chengren2017`.`ecs_users`
+
+SELECT value FROM `chengren2017`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `chengren2017`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT code, value FROM `chengren2017`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `chengren2017`.`ecs_sessions` SET expiry = '1500181419', ip = '192.168.1.16', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1493945923\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '34891f8ff1eeed47ab4716cd3d1a4d73' LIMIT 1
+

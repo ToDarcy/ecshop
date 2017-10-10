@@ -1,0 +1,184 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{insert_scripts files='jquery.js,jquery_json.js,easydialog.js'}
+{insert_scripts files='transport_jquery.js,utils.js,jquery_SuperSlide.js,lizi_common.js'}
+<!-- {if $script_name eq 'login' || $script_name eq 'register' || $script_name eq 'qpassword' || $script_name eq 'flow'} -->
+<div id="header">
+    <div class="topbar">
+  <div class="wrap clf">
+   <ul class="topbar-welcome fl" id="ECS_MEMBERZONE">
+   {* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}
+    </ul>
+    <ul class="topbar-nav fr">
+      <li><i class="i-global i-topbar-order"></i><a href="user.php?act=order_list" rel="nofollow">我的订单</a></li>
+      <li class="tb-qrcode relative"><i class="i-global i-topbar-download"></i><a title="{$shop_name}手机商城" href="/mobile" target="_blank">手机商城</a><i class="qrcode qrcode-tb hide"></i></li>
+      <li><i class="i-global i-topbar-favorites"></i><a id="favorite_wb" href="javascript:;" rel="nofollow">收藏本站</a></li>
+      <li id="topbar-map-btn" class="topbar-map-btn relative"><i class="i-global i-topbar-nav"></i><a href="javascript:;">网站导航</a><span class="i-triangle i-triangle-map"></span></li>
+      <li><i class="i-global i-topbar-phone"></i>服务热线：{$service_phone}</li>
+    </ul>
+  </div>
+  <div class="topbar-map relative hide">
+    <div class="wrap topbar-map-content">
+      <div class="topbar-map-list clf">
+        <!--{foreach from=$categories item=cat name=categories}-->
+        <dl class="topbar-map-column">
+          <dt><a href="{$cat.url}" target="_blank" title="{$cat.name|escape:html}">{$cat.name|escape:html}</a></dt>
+          <dd class="clf">
+          <!--{foreach from=$cat.cat_id item=child}-->          
+       <a href="{$child.url}" target="_blank">{$child.name|escape:html}</a>          
+          <!--{/foreach}-->
+          </dd>
+        </dl>
+        <!--{/foreach}-->
+      </div>
+    </div>
+    <div class="topbar-map-bg"></div>
+  </div>
+</div>
+<!-- {else} -->
+<!--{foreach from=get_advlist_by_id(1) item=ad name=index_image}-->
+   <div class="tophotad j-aCloseDiv">
+	<p style="background:url({$ad.image}) no-repeat center;">
+    <a href="{$ad.url}" rel="nofollow" target="_blank">{$ad.name}</a>
+    </p>
+    <a href="javascript:;" title="收起" class="a-close">×</a>
+   </div>
+   <!--{/foreach}-->
+<div id="header">
+  <div class="topbar">
+  <div class="wrap clf">
+    <ul class="topbar-welcome fl" id="ECS_MEMBERZONE">
+   {* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}
+    </ul>
+    <ul class="topbar-nav fr">
+      <li><i class="i-global i-topbar-order"></i><a href="user.php?act=order_list" rel="nofollow">我的订单</a></li>
+      <li class="tb-qrcode relative"><i class="i-global i-topbar-download"></i><a title="{$shop_name}手机商城" href="/mobile" target="_blank">手机商城</a><i class="qrcode qrcode-tb hide"></i></li>
+      <li><i class="i-global i-topbar-favorites"></i><a id="favorite_wb" href="javascript:;" rel="nofollow">收藏本站</a></li>
+      <li id="topbar-map-btn" class="topbar-map-btn relative"><i class="i-global i-topbar-nav"></i><a href="javascript:;">网站导航</a><span class="i-triangle i-triangle-map"></span></li>
+      <li><i class="i-global i-topbar-phone"></i>服务热线：{$service_phone}</li>
+    </ul>
+  </div>
+  <div class="topbar-map relative hide">
+    <div class="wrap topbar-map-content">
+      <div class="topbar-map-list clf">
+        <!--{foreach from=$categories item=cat name=categories}-->
+        <dl class="topbar-map-column">
+          <dt><a href="{$cat.url}" target="_blank" title="{$cat.name|escape:html}">{$cat.name|escape:html}</a></dt>
+          <dd class="clf">
+          <!--{foreach from=$cat.cat_id item=child}-->          
+       <a href="{$child.url}" target="_blank">{$child.name|escape:html}</a>          
+          <!--{/foreach}-->
+          </dd>
+        </dl>
+        <!--{/foreach}-->
+      </div>
+    </div>
+    <div class="topbar-map-bg"></div>
+  </div>
+</div>
+  <div class="header">
+  <div class="wrap clf">
+    <div class="logo fl">
+      <a href="index.php" title="{$shop_name}"><img src="../images/logo.png" width="300px" alt="{$shop_name}"></a>
+  </div>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script> 
+  <script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+    </script>
+    <div class="search-box fl">
+      <div class="search-wraper">
+        <div class="search">
+        <form action="search.php" method="get" id="searchForm" name="searchForm" class="clf" onsubmit="return checkSearchForm()">
+        <label></label>
+        <input type="text" name="keywords" id="keyword" class="search-kw fl" placeholder="请输入要查找的商品名称" autocomplete="off">
+		 <input type="hidden" value="k1" name="dataBi">
+         <input id="searchBtn" type="submit" class="search-btn fl" value="搜 索">
+       </form>
+        </div>
+        {if $searchkeywords}
+        <p class="kw-hot">
+        {foreach from=$searchkeywords item=val name=val}
+	<a href="search.php?keywords={$val|escape:url}">{$val}</a>
+        {/foreach}           
+        </p>
+        {/if}
+       </div>
+    </div>
+    <div class="header-cart fl relative"> 
+    <a href="flow.php?step=cart" rel="nofollow">我的购物车</a>
+   <i class="i-global i-header-num"></i>    
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="nav-box" id="nav" style="position: static; top: auto;">
+  <div class="nav-wrap wrap clf">
+    <div id="menu" class="menu relative fl">
+      <p class="menu-all relative"><a href="javascript:void(0)">所有商品分类</a>
+      <i class="i-global i-nav-menu"></i></p>
+      <div class="submenu hide">
+         <!--{foreach from=$categories item=cat name=categories}-->
+	    <!-- {if $smarty.foreach.categories.iteration<8}-->
+        <div class="submenu-item">
+        <p class="submenu-title i-global i-menu-{$smarty.foreach.categories.iteration}">
+         {$cat.name|escape:html}<i class="i-global submenu-arrow"></i>
+         <i class="submenu-shelter hide" style="display: none;"></i>
+        </p>
+        <ul class="submenu-hot clf">
+       <!--{foreach from=$cat.cat_id item=child}-->
+          <li><a target="_blank" title="{$child.name|escape:html}" href="{$child.url}" rel="nofollow">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         </ul>
+        <dl class="submenu-detail hide" style="display: none;">
+         <dt class="submenu-detail-title">{$cat.name|escape:html}</dt>
+          <dd class="menu-column">
+            <ul class="submenu-list clf">
+            <!--{foreach from=$cat.cat_id item=child}-->
+              <li><a target="_blank" title="{$child.name|escape:html}" href="{$child.url}" rel="nofollow">{$child.name|escape:html}</a></li>
+               <!--{/foreach}-->
+              </ul>
+          </dd>
+          <dt class="submenu-detail-title">知名品牌</dt>
+          <dd class="menu-column">
+            <ul class="submenu-list clf">
+    <!--{foreach from=$cat.brands item=brand name=brands}-->
+              <!-- {if $smarty.foreach.brands.iteration<10}-->
+              <li><a target="_blank" title="{$brand.brand_name|escape:html}" href="{$brand.url}" rel="nofollow">{$brand.brand_name|escape:html}</a></li>
+             <!-- {/if} -->
+                <!-- {/foreach} -->
+              </ul>
+          </dd>
+      
+          
+        </dl>
+      </div>
+      <!-- {/if} -->
+      <!-- {/foreach} -->
+    </div>
+    </div>
+    <ul class="nav fl">
+    <li {if $navigator_list.config.index eq 1} class="current"{/if}> <a title="{$lang.home}" href="../index.php">{$lang.home}</a></li>
+    <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+    <li {if $nav.active eq 1} class="current"{/if}><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if}>{$nav.name}</a></li>
+       <!-- {/foreach} -->
+    </ul>
+    </div>
+</div>
+<!-- {/if} -->

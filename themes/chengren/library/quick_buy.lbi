@@ -1,0 +1,145 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{insert_scripts files='quick_buy1.js'}
+
+<div class="quickBoxOuter" id="quickBoxOuter">
+
+      <div class="quickBoxInner clearfix">
+        <div class="title-bar">
+          <h2>快速订购<font>(闪电下单，无需走购物车流程，简单方便更快捷！)</font></h2>
+          <a href="javascript:closeLogin('quickBoxOuter')" class="close_quick"></a>
+          </div>
+        <div class="quickBox clearfix">
+          <form action="quick_buy.php" method="post" name="ECS_FORMQUICKBUY" id="ECS_FORMQUICKBUY" onsubmit="return checkOrderForm(this)">
+            <input name="goods_id" type="hidden" value="{$goods.goods_id}"/>
+            <input name="goods_sn" type="hidden" value="{$goods.goods_sn}"/>
+            <input name="goods_weight" type="hidden" value="{$goods.goods_weight}"/>
+            <input name="market_price" type="hidden" value="{$goods.market_price}"/>
+            <ul class="QuickProductBox clearfix">
+              <li><em>商品名称：</em>
+                <input name="goods_name" type="text" class="textInput" value="{$goods.goods_name}" readonly style="width:300px" />
+              </li>
+              <!-- {* 开始循环所有可选属性 *} -->
+              <!-- {foreach from=$specification item=spec key=spec_key} -->
+              <li> <em>{$spec.name}：</em>
+                <!-- {* 判断属性是复选还是单选 *} -->
+                <!-- {if $spec.attr_type eq 1} -->
+                <!-- {if $cfg.goodsattr_style eq 1} -->
+				<div class="sku_box2">
+				 <!-- {foreach from=$spec.values item=value key=key} -->
+                <label class="{if $key eq 0}selected{/if} sku_list2" for="spec_quick_value_{$value.id}">
+                  <input style="display:none;" type="radio" name="spec_quick_{$spec_key}" value="{$value.id}" id="spec_quick_value_{$value.id}" {if $key eq 0}checked{/if} onclick="quick_to_cart({$goods.goods_id})" />
+                  {$value.label} <span class="icon_bg">已选中</span></label>
+                <!-- {/foreach} -->
+				</div>
+				
+				
+				
+                <input type="hidden" name="spec_list" value="{$key}" />
+                <!-- {else} -->
+                <select name="spec_quick_{$spec_key}" onchange="quick_to_cart({$goods.goods_id})">
+                  <!-- {foreach from=$spec.values item=value key=key} -->
+                  <option label="{$value.label}" value="{$value.id}">{$value.label} {if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if}{if $value.price neq 0}{$value.format_price}{/if}</option>
+                  <!-- {/foreach} -->
+                </select>
+                <input type="hidden" name="spec_list" value="{$key}" />
+                <!-- {/if} -->
+                <!-- {else} -->
+                <!-- {foreach from=$spec.values item=value key=key} -->
+                <label for="spec_quick_value_{$value.id}">
+                  <input type="checkbox" name="spec_quick_{$spec_key}" value="{$value.id}" id="spec_quick_value_{$value.id}" onclick="quick_to_cart({$goods.goods_id})" />
+                  {$value.label} [{if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if} {$value.format_price|abs}] </label>
+                <!-- {/foreach} -->
+                <input type="hidden" name="spec_list" value="{$key}" />
+                <!-- {/if} -->
+              </li>
+              <!-- {/foreach} -->
+              <!-- {* 结束循环可选属性 *} -->
+            </ul>
+            <ul class="quickAddressBox clearfix">
+              
+              <li class="w150"><em>购物数量：</em><input name="qty" type="text" value="1" class="textInput" id="textNum"  onblur="quick_to_cart({$goods.goods_id})"/></li>
+              <li class="w150"><em>商品总价：</em><span class="total_price" id="total_price">&nbsp;</span></li>
+              
+              
+              <li class="w150" style="clear:both"><em>收货人姓名：</em> <input name="consignee" class="textInput" value="{$consignee.consignee}" type="text" /> <font>*</font></li>
+              
+              <li class="w150"> <em>联系电话：</em><input name="tel" class="textInput" value="{$consignee.tel}" type="text" /><font>*</font> </li> 
+              
+                
+              <li><em>配送区域：</em>
+                <input name="country" id="country" type="hidden" value="1" />
+                <select name="province" id="selProvinces_1" onchange="region.changed(this, 2, 'selCities_1');quick_to_cart(0);" style="border:1px solid #ccc;">
+                  <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                  <!-- {foreach from=$shop_province_list item=province} -->
+                  <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+                  <!-- {/foreach} -->
+                </select>
+                <select name="city" id="selCities_1" onchange="region.changed(this, 3, 'selDistricts_1');quick_to_cart(0);" style="border:1px solid #ccc;">
+                  <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+                  <!-- {foreach from=$city_list item=city} -->
+                  <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+                  <!-- {/foreach} -->
+                </select>
+                <select name="district" id="selDistricts_1" {if !$district_list}style="display:none"{/if} onchange="quick_to_cart(0);" style="border:1px solid #ccc;">
+                  <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+                  <!-- {foreach from=$district_list item=district} -->
+                  <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+                  <!-- {/foreach} -->
+                </select>
+                <font>*</font> </li>
+              <li><em>街道地址：</em>
+                <input name="address" class="textInput" value="{$consignee.address}" type="text" style="width:300px;" />
+                <font>*</font> </li>
+             
+              <li style="display:none"><em>手机：</em>
+                <input name="mobile" class="textInput" value="{$consignee.mobile}" type="text" />
+              </li>
+              <li style="display:none"><em>email：</em>
+                <input name="email" class="textInput" value="{$consignee.email}" type="text" />
+              </li>
+              <li style="display:none"><em>备注信息：</em>
+                <textarea name="postscript" cols="50" rows="3" id="postscript" style="border:1px solid #ccc;"></textarea>
+              </li>
+              <input name="address_id" class="textInput" value="{$consignee.address_id}" type="hidden" />
+              <li id="shipping_list" style="display:none;"></li>
+              <li id="payment_list">
+			  	<em>支付方式：</em>
+				<div class="sku_box2">
+				<!-- {foreach from=$payment_list item=payment key=key} -->
+				<label class="{if $key eq 0}selected{/if} sku_list2" for="pay_quick_value_{$payment.pay_id}"><input type="radio" name="payment" id="pay_quick_value_{$payment.pay_id}" value="{$payment.pay_id}" {if $key eq 0} checked{/if} isCod="{$payment.is_cod}"  onClick="quick_to_cart({$goods.goods_id});" style="display:none;"/>{$payment.pay_name|strip_tags}<span class="icon_bg">已选中</span></label>
+				<!-- {/foreach}循环配送方式 -->
+				</div>
+			  </li>
+            </ul>
+            <ul class="quickAddressBox clearfix" style="display:none">
+              <!-- #BeginLibraryItem "/library/order_total1.lbi" --><!-- #EndLibraryItem -->
+            </ul>
+            <ul class="quickAddressBox clearfix">
+              <li style="clear:both"> <em>&nbsp;</em>
+                <input type="image" src="images/zt_cart_bg05.jpg" value="" style="cursor:pointer; border:0px;" />
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+      <!--快速购买js-->
+      {insert_scripts files='region.js'}
+      <script language="javascript">
+/**
+ * 点选可选属性或改变数量时修改商品价格的函数
+ */
+
+
+region.isAdmin = false;
+{foreach from=$lang1.flow_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+
+var flow_no_payment = "{$lang1.flow_no_payment}";
+        var flow_no_shipping = "{$lang1.flow_no_shipping}";
+
+ </script>
+</div>
+
+    <div id="fade" class="black_overlay"></div>
+

@@ -1,0 +1,2366 @@
+INSERT INTO `ectouch2.0`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('b721119ffab222912dd01bb07c2c470c', '1456807837', '0.0.0.0', 'a:0:{}')
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `ectouch2.0`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `ectouch2.0`.`ecs_admin_user` SET last_login = '1456779039', last_ip = '0.0.0.0' WHERE user_id = '1'
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456807839', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'b721119ffab222912dd01bb07c2c470c' LIMIT 1
+
+INSERT INTO `ectouch2.0`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('c3a1116b23422d330926598acf621e39', '1456807839', '0.0.0.0', 'a:0:{}')
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, password, action_list, last_login  FROM `ectouch2.0`.`ecs_admin_user` WHERE user_id = '1'
+
+UPDATE `ectouch2.0`.`ecs_admin_user` SET last_login = '1456779040', last_ip = '0.0.0.0' WHERE user_id = '1'
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456807840', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806040
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `ectouch2.0`.`ecs_admin_message` AS a, `ectouch2.0`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `ectouch2.0`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `ectouch2.0`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `ectouch2.0`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('') ) 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `ectouch2.0`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1456779043' AND promote_end_date >= '1456779043' AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1456779043' AND promote_end_date >= '1456779043' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_stats` WHERE access_time > 1456732800
+
+SELECT count(*) FROM `ectouch2.0`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `ectouch2.0`.`ecs_feedback` AS f LEFT JOIN `ectouch2.0`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456806044
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `ectouch2.0`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456807846', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456779046;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806046
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_users`
+
+SELECT value FROM `ectouch2.0`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `ectouch2.0`.`ecs_shop_config` WHERE code = 'stylename'
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456807871', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:0:\"\";}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456806071
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456808024', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456779224;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806224
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456779224'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456779224
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456808204', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456779404;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456806404
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806404
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456779404'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456779404
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456808384', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456779584;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456806584
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806584
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456779584'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456779584
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456808564', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456779764;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806764
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456779764'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456779764
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456808744', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456779944;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456806944
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456779944'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456779944
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456808924', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456780124;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456807124
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456807124
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456780124'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456780124
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456809104', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456780304;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456807304
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456807304
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456780304'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456780304
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456809284', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456780484;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456807484
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456780484'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456780484
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456809464', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456780664;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456807664
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456780664'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456780664
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456809644', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456780844;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456807844
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456780844'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456780844
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456809824', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456781024;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456808024
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456781024'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456781024
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456810004', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456781204;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456808204
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456808204
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456781204'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456781204
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456810184', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456781384;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456808384
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456781384'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456781384
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456810364', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456781564;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456808564
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456781564'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456781564
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456810545', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456781745;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456808745
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456781745'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456781745
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456810724', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456781924;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456808924
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456781924'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456781924
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456810904', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456782104;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456809104
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456809104
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456782104'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456782104
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456811085', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456782285;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456782285'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456782285
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456811264', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456782464;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456809464
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456782464'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456782464
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456811444', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456782644;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456809644
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456809644
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456782644'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456782644
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456811625', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456782825;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456809825
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456782825'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456782825
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456811805', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456783005;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456783005'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456783005
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456811984', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456783184;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456810184
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456810184
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456783184'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456783184
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456812165', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456783365;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456810365
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456783365'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456783365
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456812344', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456783544;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456810544
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456783544'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456783544
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456812524', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456783724;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456810724
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456783724'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456783724
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456812705', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456783905;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456783905'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456783905
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456812884', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456784084;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456811084
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456784084'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456784084
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456813065', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456784265;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456784265'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456784265
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456813245', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456784445;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456784445'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456784445
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456813425', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456784625;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456784625'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456784625
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456813606', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456784806;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456811806
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456784806'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456784806
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456813787', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456784987;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456784987'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456784987
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456813967', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456785167;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456812167
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456785167'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456785167
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456814147', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456785347;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456785347'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456785347
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456814327', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456785527;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456785527'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456785527
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456814507', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456785707;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456785707'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456785707
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456814687', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456785887;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456785887'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456785887
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456814867', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786067;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813067
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456786067'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456786067
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815047', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786247;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456786247'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456786247
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815227', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786427;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815351', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786427;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813551
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `ectouch2.0`.`ecs_admin_message` AS a, `ectouch2.0`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `ectouch2.0`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `ectouch2.0`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `ectouch2.0`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('') ) 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `ectouch2.0`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1456786552' AND promote_end_date >= '1456786552' AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1456786552' AND promote_end_date >= '1456786552' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_stats` WHERE access_time > 1456732800
+
+SELECT count(*) FROM `ectouch2.0`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `ectouch2.0`.`ecs_feedback` AS f LEFT JOIN `ectouch2.0`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456813552
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `ectouch2.0`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_users`
+
+SELECT value FROM `ectouch2.0`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `ectouch2.0`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456813554
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `ectouch2.0`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '2' AND parent_id = '2'
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813556
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456813556
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815368', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786427;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456813568
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT c.*, COUNT(s.cat_id) AS has_children, COUNT(a.article_id) AS aricle_num  FROM `ectouch2.0`.`ecs_article_cat` AS c LEFT JOIN `ectouch2.0`.`ecs_article_cat` AS s ON s.parent_id=c.cat_id LEFT JOIN `ectouch2.0`.`ecs_article` AS a ON a.cat_id=c.cat_id GROUP BY c.cat_id  ORDER BY parent_id, sort_order ASC
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815398', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786427;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813598
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456813598
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `ectouch2.0`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '2' AND parent_id = '2'
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813599
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456786427'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456786427
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815407', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786607;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `ectouch2.0`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `ectouch2.0`.`ecs_category` AS c LEFT JOIN `ectouch2.0`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `ectouch2.0`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `ectouch2.0`.`ecs_goods_cat` AS gc , `ectouch2.0`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `ectouch2.0`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `ectouch2.0`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1456819199' AND promote_end_date >= '1456819199') AS is_promote  FROM `ectouch2.0`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `ectouch2.0`.`ecs_attribute`
+            WHERE attr_type = 1
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815439', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786607;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813639
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT agency_id FROM `ectouch2.0`.`ecs_admin_user` WHERE user_id = '1'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` AS o WHERE 1 
+
+SELECT o.order_id, o.order_sn, o.add_time, o.order_status, o.shipping_status, o.order_amount, o.money_paid,o.pay_status, o.consignee, o.address, o.email, o.tel, o.extension_code, o.extension_id, (   o.goods_amount + o.tax + o.shipping_fee + o.insure_fee + o.pay_fee + o.pack_fee + o.card_fee ) AS total_fee, IFNULL(u.user_name, '匿名用户') AS buyer  FROM `ectouch2.0`.`ecs_order_info` AS o  LEFT JOIN `ectouch2.0`.`ecs_users` AS u ON u.user_id=o.user_id WHERE 1  ORDER BY add_time DESC  LIMIT 0,15
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813641
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `ectouch2.0`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `ectouch2.0`.`ecs_region` WHERE region_type = '2' AND parent_id = '2'
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813642
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456813642
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456786607'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456786607
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815587', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786787;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456813787
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456786787'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456786787
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815767', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456786967;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456786967'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456786967
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456815947', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456787147;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456814147
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456787147'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456787147
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456816127', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456787327;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456814327
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456787327'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456787327
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456816307', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456787507;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456787507'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456787507
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456816487', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456787687;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456787687'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456787687
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456816667', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456787867;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456787867'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456787867
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456816847', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788047;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456788047'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456788047
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817027', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788227;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT bonus_type_id, COUNT(*) AS sent_count FROM `ectouch2.0`.`ecs_user_bonus` GROUP BY bonus_type_id
+
+SELECT bonus_type_id, COUNT(*) AS used_count FROM `ectouch2.0`.`ecs_user_bonus` WHERE used_time > 0 GROUP BY bonus_type_id
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_bonus_type`
+
+SELECT * FROM `ectouch2.0`.`ecs_bonus_type` ORDER BY type_id DESC LIMIT 15
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817062', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788227;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456815262
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_exchange_goods` AS eg LEFT JOIN `ectouch2.0`.`ecs_goods` AS g ON g.goods_id = eg.goods_id WHERE 1 
+
+SELECT eg.* , g.goods_name FROM `ectouch2.0`.`ecs_exchange_goods` AS eg LEFT JOIN `ectouch2.0`.`ecs_goods` AS g ON g.goods_id = eg.goods_id WHERE 1  ORDER by eg.goods_id DESC LIMIT 15
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456815264
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456815264
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456788227'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456788227
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817244', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788444;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456815444
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456788444'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456788444
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817424', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788624;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456815624
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456788624'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456788624
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817604', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788804;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456815804
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456788804'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456788804
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817784', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456788984;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456815984
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456788984'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456788984
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456817964', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456789164;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456816164
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456789164'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456789164
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456818144', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456789344;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456816344
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456789344'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456789344
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456818324', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456789524;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456816524
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456789524'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456789524
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456818504', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456789704;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456816704
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456789704'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456789704
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456818684', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456789884;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456816884
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456789884'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456789884
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456818864', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456790064;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456817064
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456817064
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456790064'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456790064
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456819044', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456790244;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456817244
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456790244'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456790244
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456819224', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456790424;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456817424
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456817424
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456790424'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456790424
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456819404', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456790604;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456817604
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456790604'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456790604
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456819584', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456790784;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456817784
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456817784
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456790784'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456790784
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456819764', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456790964;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456817964
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456790964'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456790964
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456819944', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456791144;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456818144
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456791144'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456791144
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456820124', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456791324;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456818324
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456791324'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456791324
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456820304', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456791504;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456818504
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456818504
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456791504'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456791504
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456820484', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456791684;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456818684
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456791684'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456791684
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456820664', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456791864;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456818864
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456791864'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456791864
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456820845', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456792045;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456819045
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456792045'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456792045
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456821025', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456792225;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456792225'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456792225
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456821205', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456792405;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456819405
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456792405'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456792405
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456821385', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456792585;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456792585'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456792585
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456821565', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456792765;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456792765'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456792765
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456821745', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456792945;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456819945
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456792945'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456792945
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456821925', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456793125;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456793125'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456793125
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456822105', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456793305;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456793305'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456793305
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456822285', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456793485;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456793485'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456793485
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456822465', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456793665;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456820665
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456793665'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456793665
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456822645', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456793845;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456793845'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456793845
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456822825', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456794025;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456794025'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456794025
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456823005', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456794205;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456821205
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456794205'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456794205
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456823185', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456794385;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456794385'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456794385
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456823365', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456794565;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456794565'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456794565
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456823545', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456794745;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456794745'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456794745
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456823725', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456794925;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456794925'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456794925
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456823905', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456795105;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456795105'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456795105
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456824085', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456795285;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456795285'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456795285
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456824265', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456795465;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456822465
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456795465'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456795465
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456824445', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456795645;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456822645
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456795645'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456795645
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456824625', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456795825;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456822825
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456795825'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456795825
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456824805', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456796005;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456823005
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456796005'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456796005
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456824985', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456796185;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456823185
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456796185'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456796185
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456825165', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456796365;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456823365
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456796365'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456796365
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456825345', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456796545;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456823545
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456796545'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456796545
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456825525', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456796725;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456796725'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456796725
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456825706', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456796906;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456823906
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456823906
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456796906'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456796906
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456825886', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456797086;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456824086
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456797086'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456797086
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456826066', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456797266;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456824266
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456797266'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456797266
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456826246', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456797446;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456824446
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456797446'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456797446
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456826426', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456797626;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456824626
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456797626'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456797626
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456826606', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456797806;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456824806
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456797806'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456797806
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456826786', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456797986;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456824986
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456797986'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456797986
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456826966', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456798166;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456825166
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456798166'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456798166
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456827146', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456798346;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456825346
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456798346'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456798346
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456827327', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456798527;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456798527'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456798527
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456827507', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456798707;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456798707'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456798707
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456827687', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456798887;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456798887'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456798887
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456827867', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456799067;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456826067
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456799067'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456799067
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456828047', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456799247;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456799247'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456799247
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456828227', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456799427;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456826427
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456799427'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456799427
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456828407', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456799607;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456799607'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456799607
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456828587', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456799787;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456799787'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456799787
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456828767', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456799967;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456799967'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456799967
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456828948', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456800148;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456827148
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456827148
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456800148'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456800148
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456829128', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456800328;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456827328
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456800328'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456800328
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456829308', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456800508;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456827508
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456800508'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456800508
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456829488', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456800688;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456827688
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456800688'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456800688
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456829668', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456800868;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456827868
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456827868
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456800868'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456800868
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456829848', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456801048;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456828048
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456828048
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456801048'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456801048
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456830028', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456801228;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456828228
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456828228
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456801228'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456801228
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456830208', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456801408;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456828408
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456801408'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456801408
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456830388', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456801588;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456828588
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456828588
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456801588'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456801588
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456830568', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456801768;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456828768
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456828768
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456801768'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456801768
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456830748', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456801948;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456828948
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456801948'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456801948
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456830928', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456802128;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456829128
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456829128
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456802128'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456802128
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456831108', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456802308;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456829308
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456829308
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456802308'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456802308
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456831288', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456802488;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456829488
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456802488'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456802488
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456831468', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456802668;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456829668
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456802668'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456802668
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456831648', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456802848;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456829848
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456802848'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456802848
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456831828', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456803028;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456830028
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456803028'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456803028
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456832008', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456803208;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456830208
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456803208'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456803208
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456832188', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456803388;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456830388
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456803388'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456803388
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456832368', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456803568;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456830568
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456803568'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456803568
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456832548', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456803748;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456830748
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456830748
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456803748'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456803748
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456832728', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456803928;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456830928
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456830928
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456803928'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456803928
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456832908', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456804108;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456831108
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456804108'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456804108
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456833088', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456804288;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456831288
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456804288'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456804288
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456833268', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456804468;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456831468
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456804468'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456804468
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456833448', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456804648;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456831648
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456831648
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456804648'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456804648
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456833628', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456804828;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456831828
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456831828
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456804828'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456804828
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456833808', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456805008;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456832008
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456832008
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456805008'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456805008
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456833988', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456805188;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456832188
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456805188'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456805188
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456834168', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456805368;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456832368
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456832368
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456805368'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456805368
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456834348', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456805548;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456832548
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456805548'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456805548
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456834528', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456805728;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456832728
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456805728'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456805728
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456834709', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456805909;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456805909'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456805909
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456834889', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456806089;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456806089'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456806089
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456835069', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456806269;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456833269
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456806269'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456806269
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456835249', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456806449;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456833449
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456806449'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456806449
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456835429', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456806629;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456806629'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456806629
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456835610', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456806810;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456833810
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456833810
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456806810'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456806810
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456835791', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456806991;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456806991'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456806991
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456835971', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456807171;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456807171'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456807171
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456836151', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456807351;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456834351
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456807351'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456807351
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456836331', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456807531;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456807531'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456807531
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456836512', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456807712;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456834712
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456807712'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456807712
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456836692', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456807892;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456834892
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456807892'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456807892
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456836872', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456808072;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456835072
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456835072
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456808072'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456808072
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456837052', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456808252;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456835252
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456835252
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456808252'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456808252
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456837233', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456808433;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456808433'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456808433
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456837413', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456808613;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456808613'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456808613
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456837593', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456808793;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456808793'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456808793
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456837773', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456808973;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456835973
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456808973'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456808973
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456837953', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456809153;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456836153
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456809153'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456809153
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456838133', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456809333;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456809333'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456809333
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456838313', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456809513;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456809513'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456809513
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456838493', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456809693;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456809693'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456809693
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456838673', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456809873;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions_data` WHERE expiry < 1456836873
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456809873'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456809873
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456838854', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456810054;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456837054
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `ectouch2.0`.`ecs_sessions` WHERE sesskey = 'c3a1116b23422d330926598acf621e39'
+
+SELECT code, value FROM `ectouch2.0`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE add_time >= '1456810054'
+
+SELECT COUNT(*) FROM `ectouch2.0`.`ecs_order_info` WHERE pay_time >= 1456810054
+
+UPDATE `ectouch2.0`.`ecs_sessions` SET expiry = '1456839034', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1456810234;}' WHERE sesskey = 'c3a1116b23422d330926598acf621e39' LIMIT 1
+
+DELETE FROM `ectouch2.0`.`ecs_sessions` WHERE expiry < 1456837234
+

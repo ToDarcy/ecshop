@@ -1,0 +1,46 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $brand_list} -->
+<!--{if $script_name eq 'index'}  -->
+<h3 class="box_title"><strong>品牌大全</strong><span class="gray">千万用户信赖的美妆网站</span></h3>
+<div class="brands_box cle" id="brands_box">
+<div class="pic fl">
+{foreach from=get_advlist_by_id(5) item=ad name=index_image} 
+<a href="{$ad.url}" target="_blank" title="{$ad.name}">
+<img src="{$ad.image}" alt="{$ad.name}"/></a> 
+{/foreach}     
+</div>
+<div class="list">
+<ul class="cle">
+<!-- {foreach from=$brand_list item=brand name="brand_foreach"} -->
+<li>
+<a href="{$brand.url}" target="_blank">
+<img src="data/brandlogo/{$brand.brand_logo}" alt="{$brand.brand_name|escape:html}" title="{$brand.brand_name|escape:html}" style="display: inline;">
+</a>
+</li>
+<!-- {/foreach} -->
+</ul>
+</div>
+<div class="pic fr">
+{foreach from=get_advlist_by_id(6) item=ad name=index_image} 
+<a href="{$ad.url}" target="_blank" title="{$ad.name}">
+<img src="{$ad.image}" alt="{$ad.name}"/></a> 
+{/foreach}     
+</div>
+</div>
+  <!--{else}--> 
+   <div class="fixed-want" id="fixed-want">
+    <div class="hd">大牌推荐</div>
+    <div class="bd" style="border-top:0;">  
+        <dl class="brand">
+            <dd>
+            	 <!-- {foreach from=$brand_list item=brand name="brand_foreach"} -->
+                <a href="{$brand.url}" target="_blank" rel="nofollow">{$brand.brand_name|escape:html}</a>
+                  <!-- {/foreach} -->
+                <p class="more"><a href="brand.php" target="_blank" rel="nofollow">更多&gt;</a></p>
+            </dd>
+        </dl>
+        </div>
+</div>
+   <!-- {/if} -->
+  <!-- {/if} -->
+

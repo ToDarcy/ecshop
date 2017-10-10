@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{insert_scripts files='transport_1.js,utils.js'}
+<div id="ECS_ORDERTOTAL" style="line-height:25px; clear:both">
+<li>
+<em>{$lang.total_fee}：</em>
+<font class="f4_b">{$total.amount_formated} = {$lang.goods_all_price}: {$total.goods_price_formated} <!-- {if $total.discount gt 0} 折扣 --> - {$lang.discount}: <font class="f4_b">{$total.discount_formated}</font><!-- {/if} --><!-- {if $total.tax gt 0} 税 -->
+      + {$lang.tax}: <font class="f4_b">{$total.tax_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.shipping_fee > 0} 配送费用 -->
+      + {$lang.shipping_fee}: <font class="f4_b">{$total.shipping_fee_formated}</font>
+      <!-- {/if} --> <!-- {if $total.shipping_insure > 0} 保价费用 -->
+      + {$lang.insure_fee}: <font class="f4_b">{$total.shipping_insure_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.pay_fee > 0} 支付费用 -->
+      + {$lang.pay_fee}: <font class="f4_b">{$total.pay_fee_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.pack_fee > 0} 包装费用-->
+      + {$lang.pack_fee}: <font class="f4_b">{$total.pack_fee_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.card_fee > 0} 贺卡费用-->
+      + {$lang.card_fee}: <font class="f4_b">{$total.card_fee_formated}</font>
+      <!-- {/if} -->   <!-- {if $total.surplus > 0} 使用余额 -->
+      - {$lang.use_surplus}: <font class="f4_b">{$total.surplus_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.integral > 0} 使用积分 -->
+      - {$lang.use_integral}: <font class="f4_b">{$total.integral_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.bonus > 0} 使用红包 -->
+      - {$lang.use_bonus}: <font class="f4_b">{$total.bonus_formated}</font>
+      <!-- {/if} -->    
+ </font>  
+</li>

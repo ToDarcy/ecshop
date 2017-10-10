@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $goods_list} -->
+<!-- {foreach from=$goods_list item=goods} -->
+ <li>
+ <div class="p-img">
+ <a target="_blank" href="{$goods.url}">
+ <img src="{$goods.goods_thumb}" alt="{$goods.goods_name}">
+ </a>
+ </div>
+ <div class="p-name">
+ <a target="_blank" href="{$goods.url}">{$goods.goods_name}
+ </a> 
+ </div>
+ <div class="p-comm">
+ <span class="p-price main-color">
+  <!-- {if $goods.promote_price neq ""} --> 
+  {$goods.promote_price} 
+  <!-- {else}--> 
+  {$goods.shop_price} 
+   <!--{/if}--> 
+ </span> 
+ </div>
+</li>
+ <!-- {/foreach} -->    
+<!-- {else} -->
+ <div class="cart-panel-main">
+<div class="cart-panel-content" style="height: 489px;">
+<div class="tip-box">
+<i class="tip-icon"></i>
+<!-- {if $user_id >0} -->
+<div class="tip-text">您的收藏夹里什么都没有哦<br>
+<a class="main-color" href="./">再去看看吧</a></div>
+  <!-- {else}--> 
+<div class="tip-text">你还没登陆，无法查看收藏夹哦<br>
+<a class="quick-login-a main-color" href="javascript:;">登陆查看</a></div>  
+   <!--{/if}--> 
+</div>
+</div>
+</div>
+<!-- {/if} -->
+<script type="text/javascript">	
+<!--{if !$smarty.session.user_id >0}-->
+//点击用户图标弹出登录框
+$('.quick-login .quick-links-a,.tip-text .quick-login-a,.quick-login .quick-login-a,.customer-service-online a').click(function(){
+	$('.pop-login,.pop-mask').show();
+})
+<!--{/if}-->
+</script>

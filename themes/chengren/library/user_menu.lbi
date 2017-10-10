@@ -1,0 +1,64 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="slidebar">
+    <h3 class="my_nala">
+        <a href="user.php">会员中心</a>
+    </h3>
+    <ul class="slide_item">
+
+        <li class="item">
+            <div class="root_node"><i class="iconfont"></i>订单中心</div>
+            <ul>
+                <li>
+                    <a class="{if $action eq 'order_list'|| $action eq 'order_detail'}on{/if}" href="user.php?act=order_list">{$lang.label_order}</a>
+                    
+                     <a class="{if $action eq 'address_list'}on{/if}" href="user.php?act=address_list">{$lang.label_address}</a>
+                     
+                     <a class="{if $action eq 'booking_list'}on{/if}" href="user.php?act=booking_list">{$lang.label_booking}</a>
+                     
+                </li>
+               
+            </ul>
+        </li>
+        
+        <li class="item">
+            <div class="root_node"><i class="iconfont"></i>会员中心</div>
+            <ul>
+                <li>
+                    <a class="{if $action eq 'profile'}on{/if}" href="user.php?act=profile">{$lang.label_profile}</a>
+                    
+                     <a class="{if $action eq 'collection_list'}on{/if}" href="user.php?act=collection_list">{$lang.label_collection}</a>
+
+                     
+                      <a class="{if $action eq 'message_list'}on{/if}" href="user.php?act=message_list">{$lang.label_message}</a>
+                      
+                       <a class="{if $action eq 'affiliate'}on{/if}" href="user.php?act=affiliate">{$lang.label_affiliate}</a>
+                       
+                        <a class="{if $action eq 'comment_list'}on{/if}" href="user.php?act=comment_list">{$lang.label_comment}</a>
+                     
+                </li>
+               
+            </ul>
+        </li>
+        
+         <li class="item">
+            <div class="root_node"><i class="iconfont"></i>账户中心</div>
+            <ul>
+                <li>
+                    <a class="{if $action eq 'bonus'|| $action eq 'order_detail'}on{/if}" href="user.php?act=bonus">{$lang.label_bonus}</a>
+                    
+                     <a class="{if $action eq 'track_packages'}on{/if}" href="user.php?act=track_packages">{$lang.label_track_packages}</a>
+                     
+                     <a class="{if $action eq 'account_log'}on{/if}" href="user.php?act=account_log">{$lang.label_user_surplus}</a>
+             
+                </li>
+               
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+
+
+

@@ -1,0 +1,63 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $script_name eq 'index'}
+<div class="chosen-box clf">
+<dt class="solid">
+<h3 class="h_title h_title2 clf">
+<!-- {if $article_categories} -->
+    <!--{foreach from=$article_categories item=cat}-->
+<!--{if $cat.id > 3} -->
+<a class="h_title_none" href="{$cat.url}" target="_blank">{$articles_cat.name|escape:html}</a>
+<span class="clear_none">
+<!--{foreach from=$cat.child item=child name=name key=k}-->
+<a href="{$child.url}" target="_blank">{$child.name|escape:html}</a>
+<!--{/foreach}-->
+</span>
+<!--{/if} -->
+<!--{/foreach}-->
+<!-- {/if} -->
+</h3>
+</dt>
+<dd class="h_mt8">
+<div class="product-item clf">
+ <!--{foreach from=$articles item=article}-->
+ <a href="{$article.url}" target="_blank">
+ <!--{if $article.file_url neq ""} -->
+<img alt="{$article.title|escape:html}" 
+src="{$article.file_url}">
+<!--{else} -->
+<img width="220" height="300" alt="{$article.title|escape:html}" 
+src="../images/no_img.gif">
+<!-- {/if} -->
+<p>{$article.title|escape:html}</p></a>
+<!--{/foreach}-->
+</div>
+</dd>
+</div>
+{elseif $script_name eq 'category'}
+<div id="market">
+        <div class="mt">
+          <h2>{$articles_cat.name|escape:html}</h2>
+        </div>
+        <div class="mc">
+          <ul>
+          <!--{foreach from=$articles item=article_item}-->
+            <li>·<a href="{$article_item.url}" target="_blank">{$article_item.short_title}</a></li>
+            <!--{/foreach}-->
+          
+          </ul>
+        </div>
+      </div>
+{else}
+      <div class="mt">
+        <h2>{$articles_cat.name|escape:html}</h2>
+      </div>
+      <div class="mc">
+        <ul>
+          <!--{foreach from=$articles item=article_item}-->
+          <li>·<a target="_blank" href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a></li>
+          <!--{/foreach}-->
+       
+        </ul>
+      </div>
+
+{/if}

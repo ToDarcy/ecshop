@@ -1,0 +1,868 @@
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500818901', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500789906;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500790103' AND promote_end_date >= '1500790103' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500790103' AND promote_end_date >= '1500790103' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817104
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500790108' AND promote_end_date >= '1500790108' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500790108' AND promote_end_date >= '1500790108' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500817108
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817108
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500817109
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `dsc222`.`ecs_payment` WHERE enabled = '1' ORDER BY pay_order
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500818912', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500789906;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817112
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE add_time >= '1500789906'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE pay_time >= 1500789906
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500818913', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500790113;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500817113
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `dsc222`.`ecs_category` AS c LEFT JOIN `dsc222`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods_cat` AS gc , `dsc222`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `dsc222`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1500796799' AND promote_end_date >= '1500796799') AS is_promote  FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `dsc222`.`ecs_attribute`
+            WHERE attr_type = 1
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500817114
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817114
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500790964' AND promote_end_date >= '1500790964' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500790964' AND promote_end_date >= '1500790964' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500819764', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500790113;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817964
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500817966
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817966
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500819779', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500790113;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500817980
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500819997', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500790113;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818198
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818198
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `dsc222`.`ecs_admin_user`WHERE user_name = 'admin'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `dsc222`.`ecs_admin_user` WHERE user_name = 'admin' AND password = '20336f54aa52f3967750c672d267e07e'
+
+UPDATE `dsc222`.`ecs_admin_user` SET last_login='1500791208', last_ip='0.0.0.0' WHERE user_id='1'
+
+SELECT DISTINCT session_id FROM `dsc222`.`ecs_cart` AS c, `dsc222`.`ecs_sessions` AS s WHERE c.session_id = s.sesskey 
+
+DELETE FROM `dsc222`.`ecs_cart` WHERE session_id NOT  IN ('') 
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820008', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1500789898\";s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818208
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818208
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791254' AND promote_end_date >= '1500791254' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791254' AND promote_end_date >= '1500791254' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820054', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1500789898\";s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818254
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `dsc222`.`ecs_category` AS c LEFT JOIN `dsc222`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods_cat` AS gc , `dsc222`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `dsc222`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1500796799' AND promote_end_date >= '1500796799') AS is_promote  FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `dsc222`.`ecs_attribute`
+            WHERE attr_type = 1
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818255
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE add_time >= '1500789898'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE pay_time >= 1500789898
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820057', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500791257;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_brand`
+
+SELECT * FROM `dsc222`.`ecs_brand` ORDER BY sort_order ASC LIMIT 15
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818262
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818262
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `dsc222`.`ecs_payment` WHERE enabled = '1' ORDER BY pay_order
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818264
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods_activity` WHERE act_type = '1' 
+
+SELECT * FROM `dsc222`.`ecs_goods_activity` WHERE act_type = '1'   ORDER BY act_id DESC  LIMIT 0, 15
+
+SELECT goods_id FROM `dsc222`.`ecs_goods_activity`WHERE act_id = '3' AND act_type = '1'
+
+SELECT COUNT(*) AS total_order, SUM(g.goods_number) AS total_goods FROM `dsc222`.`ecs_order_info` AS o, `dsc222`.`ecs_order_goods` AS g  WHERE o.order_id = g.order_id AND o.extension_code = 'group_buy' AND o.extension_id = '3' AND g.goods_id = '1' AND (order_status = '1' OR order_status = '0')
+
+SELECT goods_id FROM `dsc222`.`ecs_goods_activity`WHERE act_id = '2' AND act_type = '1'
+
+SELECT COUNT(*) AS total_order, SUM(g.goods_number) AS total_goods FROM `dsc222`.`ecs_order_info` AS o, `dsc222`.`ecs_order_goods` AS g  WHERE o.order_id = g.order_id AND o.extension_code = 'group_buy' AND o.extension_id = '2' AND g.goods_id = '3' AND (order_status = '1' OR order_status = '0')
+
+SELECT goods_id FROM `dsc222`.`ecs_goods_activity`WHERE act_id = '1' AND act_type = '1'
+
+SELECT COUNT(*) AS total_order, SUM(g.goods_number) AS total_goods FROM `dsc222`.`ecs_order_info` AS o, `dsc222`.`ecs_order_goods` AS g  WHERE o.order_id = g.order_id AND o.extension_code = 'group_buy' AND o.extension_id = '1' AND g.goods_id = '1' AND (order_status = '1' OR order_status = '0')
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820069', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500791257;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791294' AND promote_end_date >= '1500791294' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791294' AND promote_end_date >= '1500791294' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820094', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500791257;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818294
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818294
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818296
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818296
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791299' AND promote_end_date >= '1500791299' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791299' AND promote_end_date >= '1500791299' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818301
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `dsc222`.`ecs_payment` WHERE enabled = '1' ORDER BY pay_order
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820106', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500791257;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818306
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `dsc222`.`ecs_category` AS c LEFT JOIN `dsc222`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods_cat` AS gc , `dsc222`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `dsc222`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1500796799' AND promote_end_date >= '1500796799') AS is_promote  FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `dsc222`.`ecs_attribute`
+            WHERE attr_type = 1
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818312
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `dsc222`.`ecs_payment` WHERE enabled = '1' ORDER BY pay_order
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818315
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `dsc222`.`ecs_category` AS c LEFT JOIN `dsc222`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `dsc222`.`ecs_goods_cat` AS gc , `dsc222`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `dsc222`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `dsc222`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1500796799' AND promote_end_date >= '1500796799') AS is_promote  FROM `dsc222`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `dsc222`.`ecs_attribute`
+            WHERE attr_type = 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods_activity` WHERE act_type = '1' 
+
+SELECT * FROM `dsc222`.`ecs_goods_activity` WHERE act_type = '1'   ORDER BY act_id DESC  LIMIT 0, 15
+
+SELECT goods_id FROM `dsc222`.`ecs_goods_activity`WHERE act_id = '3' AND act_type = '1'
+
+SELECT COUNT(*) AS total_order, SUM(g.goods_number) AS total_goods FROM `dsc222`.`ecs_order_info` AS o, `dsc222`.`ecs_order_goods` AS g  WHERE o.order_id = g.order_id AND o.extension_code = 'group_buy' AND o.extension_id = '3' AND g.goods_id = '1' AND (order_status = '1' OR order_status = '0')
+
+SELECT goods_id FROM `dsc222`.`ecs_goods_activity`WHERE act_id = '2' AND act_type = '1'
+
+SELECT COUNT(*) AS total_order, SUM(g.goods_number) AS total_goods FROM `dsc222`.`ecs_order_info` AS o, `dsc222`.`ecs_order_goods` AS g  WHERE o.order_id = g.order_id AND o.extension_code = 'group_buy' AND o.extension_id = '2' AND g.goods_id = '3' AND (order_status = '1' OR order_status = '0')
+
+SELECT goods_id FROM `dsc222`.`ecs_goods_activity`WHERE act_id = '1' AND act_type = '1'
+
+SELECT COUNT(*) AS total_order, SUM(g.goods_number) AS total_goods FROM `dsc222`.`ecs_order_info` AS o, `dsc222`.`ecs_order_goods` AS g  WHERE o.order_id = g.order_id AND o.extension_code = 'group_buy' AND o.extension_id = '1' AND g.goods_id = '1' AND (order_status = '1' OR order_status = '0')
+
+DELETE FROM `dsc222`.`ecs_sessions_data` WHERE expiry < 1500818338
+
+DELETE FROM `dsc222`.`ecs_sessions` WHERE expiry < 1500818338
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `dsc222`.`ecs_admin_message` AS a, `dsc222`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `dsc222`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('3') ) 
+
+SELECT pay_id FROM `dsc222`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1','2','4') ) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791455' AND promote_end_date >= '1500791455' AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1500791455' AND promote_end_date >= '1500791455' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_stats` WHERE access_time > 1500710400
+
+SELECT count(*) FROM `dsc222`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `dsc222`.`ecs_feedback` AS f LEFT JOIN `dsc222`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `dsc222`.`ecs_sessions` SET expiry = '1500820255', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:5:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1500791257;s:12:\"suppliers_id\";s:1:\"0\";s:9:\"wechat_id\";i:1;}' WHERE sesskey = '9330227bc525593d4fec049d49902ba8' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `dsc222`.`ecs_sessions` WHERE sesskey = '9330227bc525593d4fec049d49902ba8'
+
+SELECT code, value FROM `dsc222`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `dsc222`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `dsc222`.`ecs_users`
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `dsc222`.`ecs_shop_config` WHERE code = 'stylename'
+

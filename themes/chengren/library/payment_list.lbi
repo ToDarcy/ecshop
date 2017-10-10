@@ -1,0 +1,7 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<em>支付方式：</em>
+<div class="sku_box2">
+<!-- {foreach from=$payment_list item=payment key=key} -->
+<label class="{if $key eq 0}selected{/if} sku_list2" for="pay_quick_value_{$payment.pay_id}"><input type="radio" name="payment" id="pay_quick_value_{$payment.pay_id}" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}"  onClick="quick_to_cart({$goods.goods_id});"/>{$payment.pay_name|strip_tags}<span class="icon_bg">已选中</span></label>
+<!-- {/foreach}循环配送方式 -->
+</div>

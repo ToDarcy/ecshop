@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta charset="utf-8">
+		<title>{$page_title}</title>
+		<link rel="stylesheet" href="__TPL__/statics/fonts/iconfont.css">
+		<link rel="stylesheet" href="__TPL__/statics/css/swiper-3.2.5.min.css" />
+		<link rel="stylesheet" href="__TPL__/statics/css/jquery-ui-1.10.1.custom.min.css" />
+		<link rel="stylesheet" href="__TPL__/statics/css/ectouch.css" />
+	</head>
+
+	<body class="">
+		<div id="loading"><img src="__TPL__/statics/img/loading.gif" /></div>
+		<div class="con">
+			<div class="category">
+				<section class="search">
+					<div class="text-all dis-box j-text-all">
+						<div class="box-flex input-text">
+							<a class="a-search-input j-search-input" href="javascript:void(0)"></a>
+							<input class="j-input-text" type="text" placeholder="商品搜索" />
+							<i class="iconfont icon-guanbi is-null j-is-null"></i>
+						</div>
+						<a href="#j-filter-div" class="s-filter j-s-filter">筛选</a>
+					</div>
+				</section>
+				<!-- #BeginLibraryItem "/library/new_goods_list.lbi" --><!-- #EndLibraryItem -->
+			</div>
+		</div>
+		<!-- #BeginLibraryItem "/library/new_goods_filter.lbi" --><!-- #EndLibraryItem -->
+		<!-- #BeginLibraryItem "/library/new_search.lbi" --><!-- #EndLibraryItem -->
+		<!--商品属性弹出层s-->
+		<div class="show-goods-attr ts-3 b-color-1">
+				<section class="s-g-attr-title b-color-1  product-list-small">
+					<div class="product-div">
+						<img class="product-list-img" src="img/product_01.png">
+						<div class="product-text">
+							<div class="dis-box">
+								<h4 class="box-flex">韩版2015冬装新款女装拼接羽绒服GW4509</h4>
+								<i class="iconfont icon-guanbi1 show-div-guanbi"></i>
+							</div>
+							<p><span class="p-price t-first ">¥1789.00</span></p>
+							<p class="dis-box p-t-remark"><span class="box-flex">库存:12800</span></p>
+						</div>
+					</div>
+				</section>
+				<section class="s-g-attr-con swiper-scroll b-color-f padding-all m-top1px">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+					<h4 class="t-remark">颜色</h4>
+					<ul class="select-one j-get-one m-top10">
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">蓝色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">红色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">卡其色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">咖啡色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">卡其色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">咖啡色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">卡其色</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">咖啡色</label>
+						</li>
+					</ul>
+					<h4 class="t-remark">尺寸</h4>
+					<ul class="select-one j-get-one m-top10">
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">S</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">X</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">XL</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">XXL</label>
+						</li>
+						<li class="ect-select dis-flex fl">
+							<label class="ts-1">XXXL</label>
+						</li>
+					</ul>
+
+					<h4 class="t-remark">数量</h4>
+					<div class="div-num dis-box m-top08">
+						<a class="num-less"></a>
+						<input class="box-flex" type="number" value="1" />
+						<a class="num-plus"></a>
+					</div>
+					</div>
+					
+					</div>
+					<div class="swiper-scrollbar"></div>
+				</section>
+				<section class="ect-button-more dis-box padding-all">
+					<a class="btn-cart box-flex" type="button">加入购物车</a>
+				</section>
+			</div>
+			<!--商品属性弹出层end-->
+		<div class="div-messages"></div>
+		
+		<!--引用js-->
+		<script type="text/javascript" src="__TPL__/statics/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="__TPL__/statics/js/swiper-3.2.5.min.js"></script>
+		<script type="text/javascript" src="__TPL__/statics/js/jquery-ui-1.10.1.custom.min.js"></script>
+		<script type="text/javascript" src="__TPL__/statics/js/jquery.ui.touch-punch.min.js"></script>
+		<script type="text/javascript" src="__TPL__/statics/js/jquery.scrollUp.min.js"></script>
+		<script type="text/javascript" src="__TPL__/statics/js/ectouch.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/template.js"></script>
+		<script type="text/javascript">
+			var sliders = function() {
+				// 筛选价格区间 js
+				$("#slider-range").slider({
+					range: true,
+					min: 0,
+					max: 1000,
+					step: 100,
+					values: [0, 300],
+					slide: function(event, ui) {
+						$("#slider-range-amount").text(ui.values[0] + " ~ " + ui.values[1]);
+					}
+				});
+				$("#slider-range-amount").text($("#slider-range").slider("values", 0) + " ~ " + $("#slider-range").slider("values", 1));
+			}();
+
+			var url = '{:url('category/async_list', array('id'=>$this->_var['id'], 'type'=>$this->_var['type'], 'brand'=>$this->_var['brand_id'], 'price_min'=>$this->_var['price_min'], 'price_max'=>$this->_var['price_max'], 'filter_attr'=>$this->_var['filter_attr'], 'page'=>$this->_var['page'], 'sort'=>$this->_var['sort'], 'order'=>$this->_var['order'], 'keywords'=>$this->_var['keywords']))}';
+			var page = 1;
+			$.post(url, {page: page}, function(data){
+				var html = template('j-product', data);
+				$('#j-product-box').append(html);
+			}, 'json');
+
+			$(window).scroll(function () {
+		        var scrollTop = $(this).scrollTop();
+		        var scrollHeight = $(document).height();
+		        var windowHeight = $(this).height();
+		        if (scrollTop + windowHeight == scrollHeight) {
+		        	$.post(url, {page: ++page}, function(data){
+						var html = template('j-product', data);
+						$('#j-product-box').append(html);
+					}, 'json');
+		        }
+		    });
+		</script>
+	</body>
+
+</html>

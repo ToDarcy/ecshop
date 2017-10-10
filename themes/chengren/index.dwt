@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+</head>
+<body>
+<script type="text/javascript">
+var process_request = "正在处理您的请求...";
+</script>
+ <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --> 
+ <div class="banner">
+ <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem --> 
+ <!-- #BeginLibraryItem "/library/index_menu.lbi" --><!-- #EndLibraryItem --> 
+ </div>
+<div class="container wrap">
+  <div class="guarantee-banner">
+    <img src="images/guarantee.png" alt="100%正品低价 100%绝对隐私 100%安全材质 100%质量保证">
+  </div>
+  <!-- TemplateBeginEditable name="促销商品区域" -->
+<!-- #BeginLibraryItem "/library/recommend_promotion.lbi" -->
+
+<!-- {if $promotion_goods} -->
+{insert_scripts files='Sales_time.js'}
+<style>
+.timediv{position:absolute;top:0;left:330px;display: none;}
+.time1{display: block;}
+</style>
+<div class="sale" id="sale">
+<div class="sale-top clf">
+<i class="i-sale i-clock"></i>
+<i class="i-sale i-sale-tips"></i>
+<span class="sale-status fl">距离本场结束：</span>
+<ul class="i-sale i-sale-time" id="Sales_Time"/></ul>
+<div class="sale-right fr">
+<a href="../search.php?intro=promotion" target="_blank" class="i-sale-all fl">查看所有<i class="i-sale-arrow"></i></a>
+</div>
+</div>
+<ul class="sale-list clf" id="sale-list">
+<!--{foreach from=$promotion_goods item=goods}-->
+<li class="sale-item">
+<div class="sale-item-pic">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}">
+<span class="sale-item-discount">直降{$goods.zhekou}%</span></a>
+</div>
+<p class="sale-item-name">
+<a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape:html}</a></p>
+<div class="clf">
+<p class="sale-item-price">
+<i>{$goods.market_price}</i>
+<span>{$goods.promote_price}</span>
+</p>
+ <!-- {if $goods.goods_number eq 0} -->
+   <a class="disable">已抢光</a>
+  <!-- {else} -->
+ <a target="_blank" href="{$goods.url}" class="sale-item-btn">去抢购</a>
+  <!-- {/if} --> 
+</div>
+</li>
+<script type="text/javascript">
+var now_time = {$now_time};
+var gmt_end_time = {$goods.gmt_end_time|default:0};
+var day = "";
+var hour = "";
+var minute = "";
+var second = "";
+var end = "";
+onload_Sales_Time();
+</script>
+<!--{/foreach}-->          
+</ul>
+</div>
+<!-- {/if} -->
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="分类下商品区域" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<!-- {if $cat_goods} -->
+<div class="chosen-box clf">
+<div class="chosen-menu fl">
+<h2 class="chosen-title chosen-title-{$goods_cat.sort_order}F">
+<i class="chosen-title-floor">{$goods_cat.sort_order}</i>
+<span>{$goods_cat.name|escape:html}</span></h2>
+<ul class="chosen-aside">
+ <!-- {foreach  from=get_cat_id_goods_best_list($this->_var['goods_cat']['id'],8) item=goods  name=goods}-->
+<li class="chosen-aside-item clf {if $smarty.foreach.goods.iteration eq 1}first{/if} {if $smarty.foreach.goods.first}current{/if}">
+<span class="serial-number">{$smarty.foreach.goods.iteration}</span>
+<a class="chosen-aside-img hide" rel="nofollow" target="_blank" href="{$goods.url}">
+<img class="lazy" data-original="{$goods.thumb}" src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="display: inline;"></a>
+<a class="chosen-aside-name" target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a>
+<p class="chosen-aside-price hide">{$goods.shop_price}</p>
+</li>
+<!--{/foreach}-->          
+</ul>
+</div>
+<div class="chosen-list-box fl">
+<div class="chosen-list-cate relative">
+<ul>
+<!--{foreach from=$categories item=cat name=no}-->
+<!--{ if $cat.name== $goods_cat.name}-->
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}" target="_blank">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         <!--{/if}-->
+        <!--{/foreach}-->
+</ul>
+<a href="{$goods_cat.url}" target="_blank" class="chosen-list-more">所有<i class="chosen-list-arrow"></i></a></div>
+<div class="chosen-list">
+<!--{foreach from=get_left_ad_cat_id($GLOBALS['smarty']->_var['goods_cat']['id']) item=ad name=index_image}-->
+<div class="left-ad fl">
+<a href="{$ad.url}">
+<img alt="{$ad.name}" src="{$ad.image}" target="_blank">
+</a>
+</div>
+<!--{/foreach}-->
+<ul class="list-item relative fr clf">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+<li class="chosen-item goods-{$smarty.foreach.goods.iteration}">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}"></a>
+<h4>{$goods.name|escape:html}</h4>
+<div>
+<span class="shop_price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></span>
+<del>{$goods.market_price}</del>
+</div>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<!-- {if $cat_goods} -->
+<div class="chosen-box clf">
+<div class="chosen-menu fl">
+<h2 class="chosen-title chosen-title-{$goods_cat.sort_order}F">
+<i class="chosen-title-floor">{$goods_cat.sort_order}</i>
+<span>{$goods_cat.name|escape:html}</span></h2>
+<ul class="chosen-aside">
+ <!-- {foreach  from=get_cat_id_goods_best_list($this->_var['goods_cat']['id'],8) item=goods  name=goods}-->
+<li class="chosen-aside-item clf {if $smarty.foreach.goods.iteration eq 1}first{/if} {if $smarty.foreach.goods.first}current{/if}">
+<span class="serial-number">{$smarty.foreach.goods.iteration}</span>
+<a class="chosen-aside-img hide" rel="nofollow" target="_blank" href="{$goods.url}">
+<img class="lazy" data-original="{$goods.thumb}" src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="display: inline;"></a>
+<a class="chosen-aside-name" target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a>
+<p class="chosen-aside-price hide">{$goods.shop_price}</p>
+</li>
+<!--{/foreach}-->          
+</ul>
+</div>
+<div class="chosen-list-box fl">
+<div class="chosen-list-cate relative">
+<ul>
+<!--{foreach from=$categories item=cat name=no}-->
+<!--{ if $cat.name== $goods_cat.name}-->
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}" target="_blank">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         <!--{/if}-->
+        <!--{/foreach}-->
+</ul>
+<a href="{$goods_cat.url}" target="_blank" class="chosen-list-more">所有<i class="chosen-list-arrow"></i></a></div>
+<div class="chosen-list">
+<!--{foreach from=get_left_ad_cat_id($GLOBALS['smarty']->_var['goods_cat']['id']) item=ad name=index_image}-->
+<div class="left-ad fl">
+<a href="{$ad.url}">
+<img alt="{$ad.name}" src="{$ad.image}" target="_blank">
+</a>
+</div>
+<!--{/foreach}-->
+<ul class="list-item relative fr clf">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+<li class="chosen-item goods-{$smarty.foreach.goods.iteration}">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}"></a>
+<h4>{$goods.name|escape:html}</h4>
+<div>
+<span class="shop_price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></span>
+<del>{$goods.market_price}</del>
+</div>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<!-- {if $cat_goods} -->
+<div class="chosen-box clf">
+<div class="chosen-menu fl">
+<h2 class="chosen-title chosen-title-{$goods_cat.sort_order}F">
+<i class="chosen-title-floor">{$goods_cat.sort_order}</i>
+<span>{$goods_cat.name|escape:html}</span></h2>
+<ul class="chosen-aside">
+ <!-- {foreach  from=get_cat_id_goods_best_list($this->_var['goods_cat']['id'],8) item=goods  name=goods}-->
+<li class="chosen-aside-item clf {if $smarty.foreach.goods.iteration eq 1}first{/if} {if $smarty.foreach.goods.first}current{/if}">
+<span class="serial-number">{$smarty.foreach.goods.iteration}</span>
+<a class="chosen-aside-img hide" rel="nofollow" target="_blank" href="{$goods.url}">
+<img class="lazy" data-original="{$goods.thumb}" src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="display: inline;"></a>
+<a class="chosen-aside-name" target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a>
+<p class="chosen-aside-price hide">{$goods.shop_price}</p>
+</li>
+<!--{/foreach}-->          
+</ul>
+</div>
+<div class="chosen-list-box fl">
+<div class="chosen-list-cate relative">
+<ul>
+<!--{foreach from=$categories item=cat name=no}-->
+<!--{ if $cat.name== $goods_cat.name}-->
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}" target="_blank">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         <!--{/if}-->
+        <!--{/foreach}-->
+</ul>
+<a href="{$goods_cat.url}" target="_blank" class="chosen-list-more">所有<i class="chosen-list-arrow"></i></a></div>
+<div class="chosen-list">
+<!--{foreach from=get_left_ad_cat_id($GLOBALS['smarty']->_var['goods_cat']['id']) item=ad name=index_image}-->
+<div class="left-ad fl">
+<a href="{$ad.url}">
+<img alt="{$ad.name}" src="{$ad.image}" target="_blank">
+</a>
+</div>
+<!--{/foreach}-->
+<ul class="list-item relative fr clf">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+<li class="chosen-item goods-{$smarty.foreach.goods.iteration}">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}"></a>
+<h4>{$goods.name|escape:html}</h4>
+<div>
+<span class="shop_price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></span>
+<del>{$goods.market_price}</del>
+</div>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<!-- {if $cat_goods} -->
+<div class="chosen-box clf">
+<div class="chosen-menu fl">
+<h2 class="chosen-title chosen-title-{$goods_cat.sort_order}F">
+<i class="chosen-title-floor">{$goods_cat.sort_order}</i>
+<span>{$goods_cat.name|escape:html}</span></h2>
+<ul class="chosen-aside">
+ <!-- {foreach  from=get_cat_id_goods_best_list($this->_var['goods_cat']['id'],8) item=goods  name=goods}-->
+<li class="chosen-aside-item clf {if $smarty.foreach.goods.iteration eq 1}first{/if} {if $smarty.foreach.goods.first}current{/if}">
+<span class="serial-number">{$smarty.foreach.goods.iteration}</span>
+<a class="chosen-aside-img hide" rel="nofollow" target="_blank" href="{$goods.url}">
+<img class="lazy" data-original="{$goods.thumb}" src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="display: inline;"></a>
+<a class="chosen-aside-name" target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a>
+<p class="chosen-aside-price hide">{$goods.shop_price}</p>
+</li>
+<!--{/foreach}-->          
+</ul>
+</div>
+<div class="chosen-list-box fl">
+<div class="chosen-list-cate relative">
+<ul>
+<!--{foreach from=$categories item=cat name=no}-->
+<!--{ if $cat.name== $goods_cat.name}-->
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}" target="_blank">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         <!--{/if}-->
+        <!--{/foreach}-->
+</ul>
+<a href="{$goods_cat.url}" target="_blank" class="chosen-list-more">所有<i class="chosen-list-arrow"></i></a></div>
+<div class="chosen-list">
+<!--{foreach from=get_left_ad_cat_id($GLOBALS['smarty']->_var['goods_cat']['id']) item=ad name=index_image}-->
+<div class="left-ad fl">
+<a href="{$ad.url}">
+<img alt="{$ad.name}" src="{$ad.image}" target="_blank">
+</a>
+</div>
+<!--{/foreach}-->
+<ul class="list-item relative fr clf">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+<li class="chosen-item goods-{$smarty.foreach.goods.iteration}">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}"></a>
+<h4>{$goods.name|escape:html}</h4>
+<div>
+<span class="shop_price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></span>
+<del>{$goods.market_price}</del>
+</div>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<!-- {if $cat_goods} -->
+<div class="chosen-box clf">
+<div class="chosen-menu fl">
+<h2 class="chosen-title chosen-title-{$goods_cat.sort_order}F">
+<i class="chosen-title-floor">{$goods_cat.sort_order}</i>
+<span>{$goods_cat.name|escape:html}</span></h2>
+<ul class="chosen-aside">
+ <!-- {foreach  from=get_cat_id_goods_best_list($this->_var['goods_cat']['id'],8) item=goods  name=goods}-->
+<li class="chosen-aside-item clf {if $smarty.foreach.goods.iteration eq 1}first{/if} {if $smarty.foreach.goods.first}current{/if}">
+<span class="serial-number">{$smarty.foreach.goods.iteration}</span>
+<a class="chosen-aside-img hide" rel="nofollow" target="_blank" href="{$goods.url}">
+<img class="lazy" data-original="{$goods.thumb}" src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="display: inline;"></a>
+<a class="chosen-aside-name" target="_blank" href="{$goods.url}">{$goods.name|escape:html}</a>
+<p class="chosen-aside-price hide">{$goods.shop_price}</p>
+</li>
+<!--{/foreach}-->          
+</ul>
+</div>
+<div class="chosen-list-box fl">
+<div class="chosen-list-cate relative">
+<ul>
+<!--{foreach from=$categories item=cat name=no}-->
+<!--{ if $cat.name== $goods_cat.name}-->
+<!--{foreach from=$cat.cat_id item=child}-->
+<li><a href="{$child.url}" target="_blank">{$child.name|escape:html}</a></li>
+         <!--{/foreach}-->
+         <!--{/if}-->
+        <!--{/foreach}-->
+</ul>
+<a href="{$goods_cat.url}" target="_blank" class="chosen-list-more">所有<i class="chosen-list-arrow"></i></a></div>
+<div class="chosen-list">
+<!--{foreach from=get_left_ad_cat_id($GLOBALS['smarty']->_var['goods_cat']['id']) item=ad name=index_image}-->
+<div class="left-ad fl">
+<a href="{$ad.url}">
+<img alt="{$ad.name}" src="{$ad.image}" target="_blank">
+</a>
+</div>
+<!--{/foreach}-->
+<ul class="list-item relative fr clf">
+<!--{foreach from=$cat_goods item=goods name=goods}-->
+<li class="chosen-item goods-{$smarty.foreach.goods.iteration}">
+<a target="_blank" href="{$goods.url}">
+<img src="{$goods.thumb}"></a>
+<h4>{$goods.name|escape:html}</h4>
+<div>
+<span class="shop_price">
+<!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></span>
+<del>{$goods.market_price}</del>
+</div>
+</li>
+<!--{/foreach}-->
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="文章分类区域" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+{if $script_name eq 'index'}
+<div class="chosen-box clf">
+<dt class="solid">
+<h3 class="h_title h_title2 clf">
+<!-- {if $article_categories} -->
+    <!--{foreach from=$article_categories item=cat}-->
+<!--{if $cat.id > 3} -->
+<a class="h_title_none" href="{$cat.url}" target="_blank">{$articles_cat.name|escape:html}</a>
+<span class="clear_none">
+<!--{foreach from=$cat.child item=child name=name key=k}-->
+<a href="{$child.url}" target="_blank">{$child.name|escape:html}</a>
+<!--{/foreach}-->
+</span>
+<!--{/if} -->
+<!--{/foreach}-->
+<!-- {/if} -->
+</h3>
+</dt>
+<dd class="h_mt8">
+<div class="product-item clf">
+ <!--{foreach from=$articles item=article}-->
+ <a href="{$article.url}" target="_blank">
+ <!--{if $article.file_url neq ""} -->
+<img alt="{$article.title|escape:html}" 
+src="{$article.file_url}">
+<!--{else} -->
+<img width="220" height="300" alt="{$article.title|escape:html}" 
+src="../images/no_img.gif">
+<!-- {/if} -->
+<p>{$article.title|escape:html}</p></a>
+<!--{/foreach}-->
+</div>
+</dd>
+</div>
+{elseif $script_name eq 'category'}
+<div id="market">
+        <div class="mt">
+          <h2>{$articles_cat.name|escape:html}</h2>
+        </div>
+        <div class="mc">
+          <ul>
+          <!--{foreach from=$articles item=article_item}-->
+            <li>·<a href="{$article_item.url}" target="_blank">{$article_item.short_title}</a></li>
+            <!--{/foreach}-->
+          
+          </ul>
+        </div>
+      </div>
+{else}
+      <div class="mt">
+        <h2>{$articles_cat.name|escape:html}</h2>
+      </div>
+      <div class="mc">
+        <ul>
+          <!--{foreach from=$articles item=article_item}-->
+          <li>·<a target="_blank" href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a></li>
+          <!--{/foreach}-->
+       
+        </ul>
+      </div>
+
+{/if}
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<!-- #BeginLibraryItem "/library/right_sidebar.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
